@@ -8,64 +8,73 @@ class_name StatsUI
 @onready var stamina_progressbar: ProgressBar = $CanvasLayer/Stamina
 @onready var stamina_label: Label = $CanvasLayer/Stamina_Label
 
-# Tách riêng 2 StyleBox cho HP và Stamina
-var hp_fill_style = StyleBoxFlat.new()
-var stamina_fill_style = StyleBoxFlat.new()
+# Biến lưu trữ giá trị trên RAM
+var player_hp = GameManager.current_player_data.get("hp", 100)
+var player_max_hp = GameManager.current_player_data.get("max_hp", 100)
+var player_stamina = GameManager.current_player_data.get("stamina", 100)
+var player_max_stamina = GameManager.current_player_data.get("max_stamina", 100)
 
-func _ready() -> void:
-    hp_bar_style()
-    stamina_bar_style()
-    
-    var player_hp = float(GameManager.current_player_data.get("hp", 100))
-    var max_hp = float(GameManager.current_player_data.get("max_hp", 100))
+var current_hp_cache: float = 0.0
+var max_hp_cache: float = 0.0
+var current_stamina_cache: float = 0.0
+var max_stamina_cache: float = 0.0
 
-    var player_stamina = float(GameManager.current_player_data.get("stamina", 100))
-    var max_stamina = float(GameManager.current_player_data.get("max_stamina", 100))
-    
-    var player_name = GameManager.current_player_data.get("character_name", "Player")
-    name_label.text = player_name
-    
-    var player_level = GameManager.current_player_data.get("level", 1)
-    level_label.text = "Level: " + str(int(player_level))
-    
-    _update_hp_bar(player_hp, max_hp)
-    _update_stamina_bar(player_stamina, max_stamina)
+# Cờ chống lặp vô hạn
+var is_updating: bool = false
 
-func hp_bar_style() -> void:
-    hp_fill_style.bg_color = Color(1.0, 0.0, 0.0, 1.0) # Màu đỏ cho thanh máu
-    hp_progressbar.add_theme_stylebox_override("fill", hp_fill_style)
+func _ready() -> void:    
+	name_label.text = GameManager.current_player_data.get("character_name", "Player")
+	level_label.text = str(int(GameManager.current_player_data.get("level", 1)))
+	
+	# Khởi tạo đầy đủ cả HP và Stamina ngay từ đầu để tránh lỗi render thanh fill
+	_update_hp_bar(player_hp, player_max_hp)
+	_update_stamina_bar(player_stamina, player_max_stamina)
 
-func stamina_bar_style() -> void:
-    # Sửa lại giá trị màu trong khoảng 0.0 -> 1.0 (hoặc dùng Color.html("#hex"))
-    stamina_fill_style.bg_color = Color(0.06, 0.2, 0.56, 0.8) # Màu xanh lam cho thanh stamina
-    stamina_progressbar.add_theme_stylebox_override("fill", stamina_fill_style)
 
+# --- HÀM VẼ LẠI TOÀN BỘ GIAO DIỆN ---
+func update_stats_ui() -> void:
+	if is_updating:
+		return
+	is_updating = true
+   
+	# --- Vẽ lại thanh HP ---
+	if max_hp_cache <= 0:
+		hp_progressbar.max_value = 1
+		hp_progressbar.value = 0
+		hp_label.text = "0/0"
+	else:
+		hp_progressbar.max_value = max_hp_cache
+		hp_progressbar.value = clamp(current_hp_cache, 0, max_hp_cache)
+		hp_label.text = str(int(current_hp_cache)) + "/" + str(int(max_hp_cache))
+   
+	# Ép refresh lại hiển thị (sửa chữ visable thành visible)
+	hp_progressbar.visible = false
+	hp_progressbar.visible = true
+
+	# --- Vẽ lại thanh Stamina ---
+	if max_stamina_cache <= 0:
+		stamina_progressbar.max_value = 1
+		stamina_progressbar.value = 0
+		stamina_label.text = "0/0"
+	else:
+		stamina_progressbar.max_value = max_stamina_cache
+		stamina_progressbar.value = clamp(current_stamina_cache, 0, max_stamina_cache)
+		stamina_label.text = str(int(current_stamina_cache)) + "/" + str(int(max_stamina_cache))
+	   
+	# Ép refresh lại hiển thị cho Stamina
+	stamina_progressbar.visible = false
+	stamina_progressbar.visible = true
+
+	is_updating = false
+
+# --- HÀM UPDATE HP ---
 func _update_hp_bar(current_hp: float, max_hp: float) -> void:
-    if max_hp <= 0:
-        hp_progressbar.value = 0
-        return
-        
-    var hp_percent = (current_hp / max_hp) * 100.0
-    hp_progressbar.value = hp_percent
-    hp_label.text = str(current_hp) + "/" + str(max_hp)
-    
-    if hp_progressbar.value >= 97.23:
-        hp_fill_style.corner_radius_bottom_right = 150
-        return
-    else: 
-        hp_fill_style.corner_radius_bottom_right = 0
+	current_hp_cache = current_hp
+	max_hp_cache = max_hp
+	update_stats_ui()
 
+# --- HÀM UPDATE STAMINA ---
 func _update_stamina_bar(current_stamina: float, max_stamina: float) -> void:
-    if max_stamina <= 0:
-        stamina_progressbar.value = 0
-        return
-        
-    var stamina_percent = (current_stamina / max_stamina) * 100.0
-    stamina_progressbar.value = stamina_percent
-    stamina_label.text = str(current_stamina) + "/" + str(max_stamina)
-
-    if stamina_progressbar.value >= 67.21:
-        stamina_fill_style.corner_radius_bottom_right = 150
-        return
-    else: 
-        stamina_fill_style.corner_radius_bottom_right = 0
+	current_stamina_cache = current_stamina
+	max_stamina_cache = max_stamina
+	update_stats_ui()

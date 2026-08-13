@@ -1,91 +1,98 @@
 [gd_scene format=3 uid="uid://clks5haalba8j"]
 
 [ext_resource type="Script" uid="uid://cmxj86lg1exio" path="res://UI/Stats_UI/stats_ui.gd" id="1_8nvg4"]
+[ext_resource type="Texture2D" uid="uid://crt81hqtkap6b" path="res://UI/Stats_UI/UI.png" id="2_uu0qh"]
+[ext_resource type="FontFile" uid="uid://e4yeqby5c2sg" path="res://Asset/Font/Noto_Serif_SC/static/NotoSerifSC-Regular.ttf" id="3_27uj6"]
+[ext_resource type="FontFile" uid="uid://bhw6a3hajlbpj" path="res://Asset/Font/Noto_Serif_SC/NotoSerifSC-VariableFont_wght.ttf" id="3_papbe"]
+[ext_resource type="FontFile" uid="uid://knj1obu62aao" path="res://Asset/Font/Noto_Serif_SC/static/NotoSerifSC-Bold.ttf" id="4_27uj6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncqna"]
-bg_color = Color(0, 0, 0, 0.22352941)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dovg6"]
+bg_color = Color(0.23921569, 0.23921569, 0.23921569, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu0qh"]
-bg_color = Color(0, 0, 0, 0.23921569)
-corner_radius_bottom_right = 150
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ok6ux"]
+bg_color = Color(0.57581145, 0, 0.2603745, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5x0re"]
-bg_color = Color(0.69589955, 0, 0.15936089, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ontfu"]
+bg_color = Color(0.23826218, 0.23826224, 0.23826206, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ki7c"]
-bg_color = Color(0, 0, 0, 0.23921569)
-corner_radius_bottom_right = 150
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uki0v"]
+bg_color = Color(5.7756904e-07, 0.660679, 0.84143585, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwryv"]
-bg_color = Color(0, 0, 0, 0.08627451)
+bg_color = Color(0.23921569, 0.23921569, 0.23921569, 1)
 
 [node name="StatsUi" type="Node2D" unique_id=174338249]
 script = ExtResource("1_8nvg4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1367940574]
 
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=504159380]
-offset_left = 127.0
-offset_top = 27.0
-offset_right = 383.0
-offset_bottom = 61.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_ncqna")
-
-[node name="Name" type="Label" parent="CanvasLayer" unique_id=2006407358]
-offset_left = 146.0
-offset_top = 32.0
-offset_right = 256.0
-offset_bottom = 55.0
-text = "qucertyuiopas"
-
-[node name="Level" type="Label" parent="CanvasLayer" unique_id=1503667786]
-offset_left = 294.0
-offset_top = 33.0
-offset_right = 369.0
-offset_bottom = 56.0
-text = "level: 999"
-
-[node name="Hp" type="ProgressBar" parent="CanvasLayer" unique_id=2076567711]
-custom_minimum_size = Vector2(256, 14.2)
-custom_maximum_size = Vector2(256, 14.2)
-offset_left = 127.0
-offset_top = 60.8
-offset_right = 383.0
-offset_bottom = 75.0
-theme_override_styles/background = SubResource("StyleBoxFlat_uu0qh")
-theme_override_styles/fill = SubResource("StyleBoxFlat_5x0re")
+[node name="Hp" type="ProgressBar" parent="CanvasLayer" unique_id=535633013]
+offset_left = 176.0
+offset_top = 78.0
+offset_right = 350.0
+offset_bottom = 95.0
+theme_override_styles/background = SubResource("StyleBoxFlat_dovg6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ok6ux")
 show_percentage = false
 
+[node name="Stamina" type="ProgressBar" parent="CanvasLayer" unique_id=737973734]
+offset_left = 176.0
+offset_top = 110.0
+offset_right = 350.0
+offset_bottom = 127.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ontfu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_uki0v")
+show_percentage = false
+
+[node name="Exp" type="ProgressBar" parent="CanvasLayer" unique_id=1589982482]
+offset_left = 176.0
+offset_top = 141.0
+offset_right = 350.0
+offset_bottom = 159.0
+theme_override_styles/background = SubResource("StyleBoxFlat_xwryv")
+show_percentage = false
+
+[node name="Ui" type="Sprite2D" parent="CanvasLayer" unique_id=673226717]
+position = Vector2(202.12502, 103)
+scale = Vector2(0.26285806, 0.24560547)
+texture = ExtResource("2_uu0qh")
+
+[node name="Name" type="Label" parent="CanvasLayer" unique_id=2006407358]
+offset_left = 157.0
+offset_top = 33.0
+offset_right = 271.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("3_27uj6")
+text = "qucertyuiopas"
+horizontal_alignment = 1
+
+[node name="Level" type="Label" parent="CanvasLayer" unique_id=1503667786]
+offset_left = 71.0
+offset_top = 154.0
+offset_right = 97.0
+offset_bottom = 168.0
+theme_override_fonts/font = ExtResource("3_papbe")
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Hp_Label" type="Label" parent="CanvasLayer" unique_id=2067649587]
-offset_left = 216.0
-offset_top = 62.0
-offset_right = 276.0
-offset_bottom = 74.0
+offset_left = 231.0
+offset_top = 80.0
+offset_right = 291.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("4_27uj6")
 theme_override_font_sizes/font_size = 8
 text = "100/100"
 horizontal_alignment = 1
 
-[node name="Stamina" type="ProgressBar" parent="CanvasLayer" unique_id=2106191192]
-offset_left = 127.0
-offset_top = 75.48
-offset_right = 371.0
-offset_bottom = 89.68
-theme_override_styles/background = SubResource("StyleBoxFlat_0ki7c")
-show_percentage = false
-
-[node name="Exp" type="ProgressBar" parent="CanvasLayer" unique_id=1589982482]
-offset_left = 127.0
-offset_top = 113.0
-offset_right = 346.0
-offset_bottom = 127.0
-theme_override_styles/background = SubResource("StyleBoxFlat_xwryv")
-show_percentage = false
-
-[node name="Stamina_Label" type="Label" parent="CanvasLayer" unique_id=523386351]
-offset_left = 216.0
-offset_top = 76.0
-offset_right = 276.0
-offset_bottom = 88.0
+[node name="Stamina_Label" type="Label" parent="CanvasLayer" unique_id=479392530]
+offset_left = 231.0
+offset_top = 112.0
+offset_right = 291.0
+offset_bottom = 125.0
+theme_override_fonts/font = ExtResource("4_27uj6")
 theme_override_font_sizes/font_size = 8
 text = "100/100"
 horizontal_alignment = 1
