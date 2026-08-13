@@ -4,8 +4,8 @@
 	"level": 1.0,
 	"map_path": "res://Main/Main.tscn",
 	"max_hp": 1000.0,
-	"pos_x": -181.296142578125,
-	"pos_y": 908.84375,
-	"stamina": 100,
-	"max_stamina": 100
+	"max_stamina": 100.0,
+	"pos_x": -420.963623046875,
+	"pos_y": -1814.02990722656,
+	"stamina": 100.0
 }
