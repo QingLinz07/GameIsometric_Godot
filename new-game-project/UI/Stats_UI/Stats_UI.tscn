@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://clks5haalba8j"]
+
+[ext_resource type="Script" uid="uid://cmxj86lg1exio" path="res://UI/Stats_UI/stats_ui.gd" id="1_8nvg4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncqna"]
+bg_color = Color(0, 0, 0, 0.22352941)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu0qh"]
+bg_color = Color(0, 0, 0, 0.23921569)
+corner_radius_bottom_right = 150
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5x0re"]
+bg_color = Color(0.69589955, 0, 0.15936089, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ki7c"]
+bg_color = Color(0, 0, 0, 0.23921569)
+corner_radius_bottom_right = 150
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwryv"]
+bg_color = Color(0, 0, 0, 0.08627451)
+
+[node name="StatsUi" type="Node2D" unique_id=174338249]
+script = ExtResource("1_8nvg4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1367940574]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=504159380]
+offset_left = 127.0
+offset_top = 27.0
+offset_right = 383.0
+offset_bottom = 61.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ncqna")
+
+[node name="Name" type="Label" parent="CanvasLayer" unique_id=2006407358]
+offset_left = 146.0
+offset_top = 32.0
+offset_right = 256.0
+offset_bottom = 55.0
+text = "qucertyuiopas"
+
+[node name="Level" type="Label" parent="CanvasLayer" unique_id=1503667786]
+offset_left = 294.0
+offset_top = 33.0
+offset_right = 369.0
+offset_bottom = 56.0
+text = "level: 999"
+
+[node name="Hp" type="ProgressBar" parent="CanvasLayer" unique_id=2076567711]
+custom_minimum_size = Vector2(256, 14.2)
+custom_maximum_size = Vector2(256, 14.2)
+offset_left = 127.0
+offset_top = 60.8
+offset_right = 383.0
+offset_bottom = 75.0
+theme_override_styles/background = SubResource("StyleBoxFlat_uu0qh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5x0re")
+show_percentage = false
+
+[node name="Hp_Label" type="Label" parent="CanvasLayer" unique_id=2067649587]
+offset_left = 216.0
+offset_top = 62.0
+offset_right = 276.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 8
+text = "100/100"
+horizontal_alignment = 1
+
+[node name="Stamina" type="ProgressBar" parent="CanvasLayer" unique_id=2106191192]
+offset_left = 127.0
+offset_top = 75.48
+offset_right = 371.0
+offset_bottom = 89.68
+theme_override_styles/background = SubResource("StyleBoxFlat_0ki7c")
+show_percentage = false
+
+[node name="Exp" type="ProgressBar" parent="CanvasLayer" unique_id=1589982482]
+offset_left = 127.0
+offset_top = 113.0
+offset_right = 346.0
+offset_bottom = 127.0
+theme_override_styles/background = SubResource("StyleBoxFlat_xwryv")
+show_percentage = false
+
+[node name="Stamina_Label" type="Label" parent="CanvasLayer" unique_id=523386351]
+offset_left = 216.0
+offset_top = 76.0
+offset_right = 276.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 8
+text = "100/100"
+horizontal_alignment = 1

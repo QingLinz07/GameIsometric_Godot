@@ -1,0 +1,19 @@
+# Godot specific ignores
+.godot/
+/Asset/
+/Assets/
+
+# C# / Mono / VS Code / Visual Studio ignores
+.mono/
+obj/
+bin/
+.vs/
+.vscode/
+*.csproj.user
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Chặn file thực thi (đặc biệt là file .exe của Godot)
+*.exe

@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://cvnt842p3chox"]
+
+[ext_resource type="Script" uid="uid://d3phji1yqv62s" path="res://UI/Login_Scene/login_scene.gd" id="1_5nqax"]
+[ext_resource type="Script" uid="uid://eg41j0vlue8x" path="res://UI/Login_Scene/on_off_sound.gd" id="4_0owqh"]
+[ext_resource type="Texture2D" uid="uid://dn8og0207ibsf" path="res://UI/Login_Scene/intro/bat_loa.png" id="4_ernro"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0owqh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ernro"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_laifr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8te4a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b03j0"]
+
+[node name="LoginScene" type="Control" unique_id=322820430]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5nqax")
+
+[node name="UsernameInput" type="LineEdit" parent="." unique_id=1786728405]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.0
+offset_top = 221.0
+offset_right = -379.0
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Tên nhân vật"
+alignment = 1
+
+[node name="RegisterButton" type="Button" parent="." unique_id=2085040826]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.0
+offset_top = 278.0
+offset_right = -381.0
+offset_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tạo Nhân Vật"
+
+[node name="StatusLabel" type="Label" parent="." unique_id=1320315016]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.0
+offset_top = 284.0
+offset_right = -175.0
+offset_bottom = 307.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="on_off_sound" type="Button" parent="." unique_id=438368062]
+layout_mode = 0
+offset_left = 519.0
+offset_top = -315.0
+offset_right = 567.0
+offset_bottom = -263.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0owqh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ernro")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_laifr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8te4a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b03j0")
+icon = ExtResource("4_ernro")
+expand_icon = true
+script = ExtResource("4_0owqh")
+
+[node name="SaveListContainer" type="ScrollContainer" parent="." unique_id=1514094222]
+layout_mode = 0
+offset_left = 151.0
+offset_top = -249.0
+offset_right = 574.0
+offset_bottom = 320.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveListContainer" unique_id=2108359030]
+layout_mode = 2

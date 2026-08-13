@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cfkgwp02egd6p"]
+
+[ext_resource type="Script" uid="uid://bwe168jsa1xmj" path="res://UI/Login_Scene/loading_scene.gd" id="1_0bh30"]
+
+[node name="LoadingScene" type="Control" unique_id=1751407161]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0bh30")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=769783550]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 649.0
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=751575683]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 621.0
+offset_right = 1154.0
+offset_bottom = 648.0
+value = 100.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1812247521]
