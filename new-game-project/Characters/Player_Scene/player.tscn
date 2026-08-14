@@ -660,6 +660,8 @@ animations = [{
 radius = 13.33334
 height = 26.66668
 
+[sub_resource type="FontVariation" id="FontVariation_bcdvr"]
+
 [node name="Player" type="CharacterBody2D" unique_id=780113477]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_sphr4")
@@ -677,22 +679,25 @@ shape = SubResource("CapsuleShape2D_ncqna")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=529908281]
 position = Vector2(14, 9.333334)
-zoom = Vector2(0.75, 0.75)
 script = ExtResource("144_v6i3h")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1489532428]
 avoidance_enabled = true
 radius = 30.0
 
-[node name="Nametag" type="Label" parent="." unique_id=1461115389]
-visible = false
-offset_left = -44.0
-offset_top = -100.0
-offset_right = 44.66667
-offset_bottom = -77.0
-script = ExtResource("145_pafuv")
-
 [node name="Shadow" type="Node2D" parent="." unique_id=511381514]
 position = Vector2(0, 40.666664)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("146_wdqmn")
+
+[node name="Nametag" type="Label" parent="." unique_id=808127832]
+offset_left = -49.333332
+offset_top = -58.666664
+offset_right = 37.666668
+offset_bottom = -39.125
+theme_override_fonts/font = SubResource("FontVariation_bcdvr")
+theme_override_font_sizes/font_size = 10
+text = "Player Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("145_pafuv")

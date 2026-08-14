@@ -7,17 +7,23 @@ class_name StatsUI
 @onready var hp_progressbar: ProgressBar = $CanvasLayer/Hp
 @onready var stamina_progressbar: ProgressBar = $CanvasLayer/Stamina
 @onready var stamina_label: Label = $CanvasLayer/Stamina_Label
+@onready var exp_progressbar: ProgressBar = $CanvasLayer/Exp
+@onready var exp_label: Label = $CanvasLayer/Exp_Label
 
 # Biến lưu trữ giá trị trên RAM
 var player_hp = GameManager.current_player_data.get("hp", 100)
 var player_max_hp = GameManager.current_player_data.get("max_hp", 100)
 var player_stamina = GameManager.current_player_data.get("stamina", 100)
 var player_max_stamina = GameManager.current_player_data.get("max_stamina", 100)
+var player_exp = GameManager.current_player_data.get("exp", 0)
+var player_max_exp = GameManager.current_player_data.get("max_exp", 100)
 
 var current_hp_cache: float = 0.0
 var max_hp_cache: float = 0.0
 var current_stamina_cache: float = 0.0
 var max_stamina_cache: float = 0.0
+var current_exp_cache: float = 0.0
+var max_exp_cache: float = 0.0
 
 # Cờ chống lặp vô hạn
 var is_updating: bool = false
@@ -29,6 +35,7 @@ func _ready() -> void:
 	# Khởi tạo đầy đủ cả HP và Stamina ngay từ đầu để tránh lỗi render thanh fill
 	_update_hp_bar(player_hp, player_max_hp)
 	_update_stamina_bar(player_stamina, player_max_stamina)
+	_update_exp_bar(player_exp, player_max_exp)
 
 
 # --- HÀM VẼ LẠI TOÀN BỘ GIAO DIỆN ---
@@ -60,10 +67,23 @@ func update_stats_ui() -> void:
 		stamina_progressbar.max_value = max_stamina_cache
 		stamina_progressbar.value = clamp(current_stamina_cache, 0, max_stamina_cache)
 		stamina_label.text = str(int(current_stamina_cache)) + "/" + str(int(max_stamina_cache))
-	   
+
 	# Ép refresh lại hiển thị cho Stamina
 	stamina_progressbar.visible = false
 	stamina_progressbar.visible = true
+
+	# --- Vẽ lại thanh Exp ---
+	if max_exp_cache <= 0:
+		exp_progressbar.max_value = 1
+		exp_progressbar.value = 0
+		exp_label.text = "0/0"
+	else:
+		exp_progressbar.max_value = max_exp_cache
+		exp_progressbar.value = clamp(current_exp_cache, 0, max_exp_cache)
+		exp_label.text = str(int(current_exp_cache)) + "/" + str(int(max_exp_cache))		
+
+	exp_progressbar.visible = false
+	exp_progressbar.visible = true 
 
 	is_updating = false
 
@@ -77,4 +97,9 @@ func _update_hp_bar(current_hp: float, max_hp: float) -> void:
 func _update_stamina_bar(current_stamina: float, max_stamina: float) -> void:
 	current_stamina_cache = current_stamina
 	max_stamina_cache = max_stamina
+	update_stats_ui()
+
+func _update_exp_bar(current_exp: float, max_exp: float) -> void:
+	current_exp_cache = current_exp
+	max_exp_cache = max_exp
 	update_stats_ui()

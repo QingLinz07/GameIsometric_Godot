@@ -1,11 +1,31 @@
 extends Camera2D
 
+@export var min_zoom: float = 0.75
+@export var max_zoom: float = 1.5
+@export var zoom_step: float = 0.1
+@export var zoom_speed: float = 10.0
+
 func _ready() -> void:
+	# Đặt zoom mặc định ban đầu là 0.75
+	zoom = Vector2(min_zoom, min_zoom)
+	
 	# Đợi 1-2 frame để đảm bảo Player đã được add vào Map Scene và Scene Tree đã sẵn sàng
 	await get_tree().process_frame
 	await get_tree().process_frame
 	
 	setup_camera_limits()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		var target_zoom = zoom.x
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			target_zoom += zoom_step
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			target_zoom -= zoom_step
+		
+		# Giới hạn giá trị zoom nằm trong khoảng từ 0.75 đến 1.5
+		target_zoom = clamp(target_zoom, min_zoom, max_zoom)
+		zoom = Vector2(target_zoom, target_zoom)
 
 func setup_camera_limits() -> void:
 	var current_scene = get_tree().current_scene
@@ -51,7 +71,6 @@ func setup_camera_limits() -> void:
 		limit_top = int(limit_rect.position.y)
 		limit_right = int(limit_rect.end.x)
 		limit_bottom = int(limit_rect.end.y)
-		#print("Đã tự động cập nhật giới hạn camera cho map: ", current_scene.name)
 
 # Hàm đệ quy tìm node theo kiểu dữ liệu
 func _find_node_by_type(node: Node, type) -> Node:
