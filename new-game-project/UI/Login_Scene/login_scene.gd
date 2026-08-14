@@ -14,7 +14,6 @@ var custom_font = load("res://Asset/Font/Noto_Serif_SC/NotoSerifSC-VariableFont_
 @onready var back_button = $back_button
 #Load Nhân Vật
 @onready var save_list_container = $Load_Nhan_Vat/SaveListContainer/VBoxContainer # Đã sửa trỏ đúng vào VBoxContainer nằm trong ScrollContainer
-@onready var khung_load = $Load_Nhan_Vat/SaveListContainer/VBoxContainer/load_players
 
 const DEFAULT_MAP = "res://Main/Main.tscn"
 const PLAYER_SCENE_PATH = "res://Characters/Player_Scene/player.tscn"

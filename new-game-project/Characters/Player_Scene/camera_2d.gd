@@ -3,11 +3,14 @@ extends Camera2D
 @export var min_zoom: float = 0.75
 @export var max_zoom: float = 1.5
 @export var zoom_step: float = 0.1
-@export var zoom_speed: float = 10.0
+@export var zoom_speed: float = 10.0 # Tốc độ zoom mượt (càng cao zoom càng nhanh)
+
+var target_zoom: float = 0.75
 
 func _ready() -> void:
-	# Đặt zoom mặc định ban đầu là 0.75
-	zoom = Vector2(min_zoom, min_zoom)
+	# Đặt zoom mặc định ban đầu
+	target_zoom = min_zoom
+	zoom = Vector2(target_zoom, target_zoom)
 	
 	# Đợi 1-2 frame để đảm bảo Player đã được add vào Map Scene và Scene Tree đã sẵn sàng
 	await get_tree().process_frame
@@ -15,17 +18,22 @@ func _ready() -> void:
 	
 	setup_camera_limits()
 
+func _process(delta: float) -> void:
+	# Nội suy mượt giá trị zoom hiện tại về phía target_zoom mỗi frame
+	var current_zoom = zoom.x
+	if not is_equal_approx(current_zoom, target_zoom):
+		var new_zoom = lerpf(current_zoom, target_zoom, zoom_speed * delta)
+		zoom = Vector2(new_zoom, new_zoom)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		var target_zoom = zoom.x
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			target_zoom += zoom_step
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			target_zoom -= zoom_step
 		
-		# Giới hạn giá trị zoom nằm trong khoảng từ 0.75 đến 1.5
+		# Giới hạn giá trị zoom nằm trong khoảng min và max
 		target_zoom = clamp(target_zoom, min_zoom, max_zoom)
-		zoom = Vector2(target_zoom, target_zoom)
 
 func setup_camera_limits() -> void:
 	var current_scene = get_tree().current_scene
