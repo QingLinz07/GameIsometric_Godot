@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://k258r4vbyjwk" path="res://UI/Login_Scene/intro/background.png" id="8_tn4bh"]
 [ext_resource type="Texture2D" uid="uid://bvdv6mwictrw4" path="res://UI/Login_Scene/intro/taonhanvat.png" id="9_lpqux"]
 [ext_resource type="FontFile" uid="uid://e4yeqby5c2sg" path="res://Asset/Font/Noto_Serif_SC/static/NotoSerifSC-Regular.ttf" id="10_anie6"]
+[ext_resource type="Texture2D" uid="uid://b2ufr5a6v7qc8" path="res://UI/Login_Scene/intro/bg.png" id="10_asbcp"]
+[ext_resource type="Script" uid="uid://dc34esnafpcg1" path="res://UI/Login_Scene/Scroll_Smooth.gd" id="11_wae26"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0owqh"]
 
@@ -161,12 +163,18 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Bg" type="Sprite2D" parent="Load_Nhan_Vat" unique_id=989524425]
+position = Vector2(-26.99997, 34.500034)
+scale = Vector2(0.9488636, 1.0716146)
+texture = ExtResource("10_asbcp")
+
 [node name="SaveListContainer" type="ScrollContainer" parent="Load_Nhan_Vat" unique_id=1514094222]
 layout_mode = 0
-offset_left = 40.0
-offset_top = -258.0
-offset_right = 532.0
-offset_bottom = 244.0
+offset_left = 154.0
+offset_top = -266.0
+offset_right = 638.0
+offset_bottom = 298.0
+script = ExtResource("11_wae26")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Load_Nhan_Vat/SaveListContainer" unique_id=2108359030]
 layout_mode = 2

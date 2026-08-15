@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cx8yfv00o6n1f"]
 
+[ext_resource type="Script" uid="uid://df3eob46afwbr" path="res://Maps/Thanh_Truong_An/thanh_truong_an.gd" id="1_0bwye"]
 [ext_resource type="Texture2D" uid="uid://bimfcdo6plej1" path="res://Asset/Map/ThanhTruongAn.jpg" id="1_s0jow"]
 [ext_resource type="Script" uid="uid://cgyvbec2hqcwp" path="res://Maps/Thanh_Truong_An/area_2d.gd" id="3_0jhfh"]
+[ext_resource type="AudioStream" uid="uid://bjq3hhrca8gf8" path="res://Asset/Musics/《河阳城》.mp3" id="3_xl588"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_0jhfh"]
 vertices = PackedVector2Array(7099.008, -4821, 7108.9766, 2213.9922, -5979, 2212, -5982.992, -4821.992)
@@ -10,6 +12,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-5993, -4832, -5989, 22
 
 [node name="ThanhTruongAn" type="Node2D" unique_id=1955621244]
 y_sort_enabled = true
+script = ExtResource("1_0bwye")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1523831761]
 z_index = -2
@@ -331,6 +334,7 @@ polygon = PackedVector2Array(-912, -1643, -909, -1606, -868, -1614, -870, -1663)
 polygon = PackedVector2Array(-125, -1859, -120, -1814, -89, -1828, -90, -1871)
 
 [node name="Vung_Di_Xuyen_Qua" type="Area2D" parent="." unique_id=1153043421]
+visible = false
 script = ExtResource("3_0jhfh")
 
 [node name="cot1" type="CollisionPolygon2D" parent="Vung_Di_Xuyen_Qua" unique_id=2009030872]
@@ -565,3 +569,8 @@ _spawnable_scenes = PackedStringArray("uid://diosbw5vuhhfp")
 spawn_path = NodePath("../Players")
 
 [node name="Players" type="Node2D" parent="." unique_id=1454354513]
+
+[node name="Nhac_Nen" type="AudioStreamPlayer2D" parent="." unique_id=1202533683]
+stream = ExtResource("3_xl588")
+autoplay = true
+parameters/looping = true

@@ -176,7 +176,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Stand_Down",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -205,7 +205,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Stand_Down_Left",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -231,7 +231,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Stand_Down_Right",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -260,7 +260,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Stand_Left",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -286,7 +286,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Stand_Right",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -315,7 +315,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Stand_Up",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -344,7 +344,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Stand_Up_Left",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -373,7 +373,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Stand_Up_Right",
-"speed": 6.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -408,7 +408,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Walk_Down",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -443,7 +443,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Walk_Down_Left",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -478,7 +478,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Walk_Down_Right",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -513,7 +513,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Walk_Left",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -548,7 +548,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Walk_Right",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -583,7 +583,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Walk_Up",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -618,7 +618,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Walk_Up_Left",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -653,7 +653,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Walk_Up_Right",
-"speed": 10.0
+"speed": 15.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ncqna"]
@@ -670,8 +670,8 @@ script = ExtResource("1_sphr4")
 position = Vector2(5.9604645e-08, 0)
 scale = Vector2(0.47630203, 0.5552083)
 sprite_frames = SubResource("SpriteFrames_ncqna")
-animation = &"Walk_Up_Left"
-frame_progress = 0.31558573
+animation = &"Stand_Up_Right"
+frame_progress = 0.5073498
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=378155614]
 position = Vector2(0, 19.333334)
