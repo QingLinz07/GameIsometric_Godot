@@ -6,6 +6,10 @@ var current_save_path: String = ""
 # Lưu bộ nhớ đệm dữ liệu của nhân vật để truy xuất nhanh trong game
 var current_player_data: Dictionary = {}
 
+func _ready() -> void:
+	# Khởi tạo GameManager khi game bắt đầu
+	get_window().unresizable = true
+
 # --- 1. ĐỌC DỮ LIỆU TỪ FILE JSON ---
 func load_character_data(file_path: String) -> Dictionary:
 	if not FileAccess.file_exists(file_path):

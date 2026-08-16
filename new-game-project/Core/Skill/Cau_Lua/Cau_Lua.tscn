@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://iwhdroaapdyb"]
+
+[ext_resource type="Texture2D" uid="uid://dnu04ler2d4t7" path="res://Core/Skill/Cau_Lua/Asset/frame_0.png" id="1_aga7m"]
+[ext_resource type="Script" uid="uid://dysx43pllsgwl" path="res://Core/Skill/Cau_Lua/cau_lua.gd" id="1_ic6gj"]
+[ext_resource type="Texture2D" uid="uid://b6mycmwi3qwjq" path="res://Core/Skill/Cau_Lua/Asset/frame_1.png" id="2_ic6gj"]
+[ext_resource type="Texture2D" uid="uid://b6isrtlpxcuh7" path="res://Core/Skill/Cau_Lua/Asset/frame_2.png" id="3_fxar1"]
+[ext_resource type="Texture2D" uid="uid://bdsn0tj7gr3tw" path="res://Core/Skill/Cau_Lua/Asset/frame_3.png" id="4_340i7"]
+[ext_resource type="Texture2D" uid="uid://cunsfhw17nkxm" path="res://Core/Skill/Cau_Lua/Asset/frame_4.png" id="5_ss1li"]
+[ext_resource type="Texture2D" uid="uid://c6vfcctp6cutm" path="res://Core/Skill/Cau_Lua/Asset/frame_5.png" id="6_nlhaa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncqna"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aga7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ic6gj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fxar1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_340i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ss1li")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nlhaa")
+}],
+"loop": 1,
+"name": &"Skill",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ex44"]
+radius = 72.11102
+
+[node name="CauLua" type="Area2D" unique_id=1174862616]
+script = ExtResource("1_ic6gj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2081150324]
+sprite_frames = SubResource("SpriteFrames_ncqna")
+animation = &"Skill"
+frame_progress = 0.5375677
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=409559108]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_4ex44")

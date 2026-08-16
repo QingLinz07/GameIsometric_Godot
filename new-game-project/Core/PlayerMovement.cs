@@ -1,16 +1,18 @@
 using Godot;
 using System.Collections.Generic;
 
-public partial class PlayerMovement: Node
+public partial class PlayerMovement : Node
 {
     private CharacterBody2D body;
     private AnimatedSprite2D sprite;
     private Node2D shadow;
+    private NavigationAgent2D navigationAgent;
 
     private float speed;
     private float turnSmoothness;
     private string lastDirectionName = "Down";
     private Vector2 animMoveDir = Vector2.Zero;
+    private bool isMovingToTarget = false;
 
     private readonly Dictionary<string, Vector2> shadowOffsets = new Dictionary<string, Vector2>()
     {
@@ -24,32 +26,76 @@ public partial class PlayerMovement: Node
         { "Up_Right", new Vector2(0, 30) }
     };
 
-    public void PlayerMovementCreate(CharacterBody2D pBody, AnimatedSprite2D pSprite, Node2D pShadow, float pSpeed, float pSmoothness)
+    public void PlayerMovementCreate(CharacterBody2D pBody, AnimatedSprite2D pSprite, Node2D pShadow, NavigationAgent2D pAgent, float pSpeed, float pSmoothness)
     {
         body = pBody;
         sprite = pSprite;
         shadow = pShadow;
+        navigationAgent = pAgent;
         speed = pSpeed;
         turnSmoothness = pSmoothness;
+
+        if (navigationAgent != null)
+        {
+            navigationAgent.PathDesiredDistance = 16.0f;
+            navigationAgent.TargetDesiredDistance = 10.0f;
+            navigationAgent.AvoidanceEnabled = false;
+        }
+    }
+
+    public void HandleInput(InputEvent @event)
+    {
+        if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
+        {
+            if (mouseEvent.ButtonIndex == MouseButton.Right)
+            {
+                if (navigationAgent != null)
+                {
+                    navigationAgent.TargetPosition = body.GetGlobalMousePosition();
+                    isMovingToTarget = true;
+                }
+            }
+        }
     }
 
     public void HandlePhysics(double delta)
     {
-        Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-
-        if (inputDir != Vector2.Zero)
+        if (!isMovingToTarget || navigationAgent == null)
         {
-            inputDir = inputDir.Normalized();
-            body.Velocity = inputDir * speed;
-            body.MoveAndSlide();
+            body.Velocity = Vector2.Zero;
+            StopMovement();
+            return;
+        }
 
+        if (navigationAgent.IsNavigationFinished())
+        {
+            isMovingToTarget = false;
+            body.Velocity = Vector2.Zero;
+            StopMovement();
+            return;
+        }
+
+        // 1. Lấy hướng đi từ Navigation Agent đã được nắn sẵn trong vùng NavMesh
+        Vector2 nextPathPosition = navigationAgent.GetNextPathPosition();
+        Vector2 targetDir = body.GlobalPosition.DirectionTo(nextPathPosition);
+
+        // 2. Tính toán vận tốc và di chuyển thẳng bằng MoveAndSlide
+        Vector2 targetVelocity = targetDir * speed;
+        body.Velocity = body.Velocity.Lerp(targetVelocity, 20.0f * (float)delta);
+        body.MoveAndSlide();
+
+        // 3. Xử lý chuyển động animation mượt mà
+        Vector2 actualDir = body.GetRealVelocity().Length() > 5.0f ? body.GetRealVelocity().Normalized() : targetDir;
+
+        if (actualDir != Vector2.Zero)
+        {
             if (animMoveDir == Vector2.Zero)
             {
-                animMoveDir = inputDir;
+                animMoveDir = actualDir;
             }
             else
             {
-                animMoveDir = animMoveDir.Slerp(inputDir, turnSmoothness * (float)delta).Normalized();
+                animMoveDir = animMoveDir.Slerp(actualDir, turnSmoothness * (float)delta).Normalized();
             }
 
             string newDirName = Get8WayDirectionName(animMoveDir);
@@ -59,11 +105,6 @@ public partial class PlayerMovement: Node
                 sprite.Play("Walk_" + lastDirectionName);
                 UpdateShadowPosition(lastDirectionName);
             }
-        }
-        else
-        {
-            body.Velocity = Vector2.Zero;
-            StopMovement();
         }
     }
 

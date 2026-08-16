@@ -657,8 +657,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ncqna"]
-radius = 13.33334
-height = 26.66668
+radius = 3.3333333
+height = 6.6666665
 
 [sub_resource type="FontVariation" id="FontVariation_bcdvr"]
 
@@ -670,11 +670,10 @@ script = ExtResource("1_sphr4")
 position = Vector2(5.9604645e-08, 0)
 scale = Vector2(0.47630203, 0.5552083)
 sprite_frames = SubResource("SpriteFrames_ncqna")
-animation = &"Stand_Up_Right"
-frame_progress = 0.5073498
+animation = &"Walk_Up_Right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=378155614]
-position = Vector2(0, 19.333334)
+position = Vector2(1.3333334, 26.666666)
 shape = SubResource("CapsuleShape2D_ncqna")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=529908281]
@@ -683,7 +682,8 @@ script = ExtResource("144_v6i3h")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1489532428]
 avoidance_enabled = true
-radius = 30.0
+radius = 35.0
+max_speed = 200.0
 
 [node name="Shadow" type="Node2D" parent="." unique_id=511381514]
 position = Vector2(0, 40.666664)

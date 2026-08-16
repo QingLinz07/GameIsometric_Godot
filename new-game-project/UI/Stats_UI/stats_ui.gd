@@ -1,14 +1,14 @@
-extends Node
+extends Control
 class_name StatsUI
 
-@onready var name_label: Label = $CanvasLayer/Name
-@onready var level_label: Label = $CanvasLayer/Level
-@onready var hp_label: Label = $CanvasLayer/Hp_Label
-@onready var hp_progressbar: ProgressBar = $CanvasLayer/Hp
-@onready var stamina_progressbar: ProgressBar = $CanvasLayer/Stamina
-@onready var stamina_label: Label = $CanvasLayer/Stamina_Label
-@onready var exp_progressbar: ProgressBar = $CanvasLayer/Exp
-@onready var exp_label: Label = $CanvasLayer/Exp_Label
+@onready var name_label: Label = $CanvasLayer/UIContainer/Name
+@onready var level_label: Label = $CanvasLayer/UIContainer/Level
+@onready var hp_label: Label = $CanvasLayer/UIContainer/Hp_Label
+@onready var hp_progressbar: ProgressBar = $CanvasLayer/UIContainer/Hp
+@onready var stamina_progressbar: ProgressBar = $CanvasLayer/UIContainer/Stamina
+@onready var stamina_label: Label = $CanvasLayer/UIContainer/Stamina_Label
+@onready var exp_progressbar: ProgressBar = $CanvasLayer/UIContainer/Exp
+@onready var exp_label: Label = $CanvasLayer/UIContainer/Exp_Label
 
 # Biến lưu trữ giá trị trên RAM
 var player_hp = GameManager.current_player_data.get("hp", 100)
@@ -28,7 +28,7 @@ var max_exp_cache: float = 0.0
 # Cờ chống lặp vô hạn
 var is_updating: bool = false
 
-func _ready() -> void:    
+func _ready() -> void:
 	name_label.text = GameManager.current_player_data.get("character_name", "Player")
 	level_label.text = str(int(GameManager.current_player_data.get("level", 1)))
 	
@@ -80,10 +80,10 @@ func update_stats_ui() -> void:
 	else:
 		exp_progressbar.max_value = max_exp_cache
 		exp_progressbar.value = clamp(current_exp_cache, 0, max_exp_cache)
-		exp_label.text = str(int(current_exp_cache)) + "/" + str(int(max_exp_cache))		
+		exp_label.text = str(int(current_exp_cache)) + "/" + str(int(max_exp_cache))
 
 	exp_progressbar.visible = false
-	exp_progressbar.visible = true 
+	exp_progressbar.visible = true
 
 	is_updating = false
 
