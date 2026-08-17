@@ -662,7 +662,7 @@ height = 6.6666665
 
 [sub_resource type="FontVariation" id="FontVariation_bcdvr"]
 
-[node name="Player" type="CharacterBody2D" unique_id=780113477]
+[node name="Player" type="CharacterBody2D" unique_id=780113477 groups=["Player"]]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_sphr4")
 
@@ -672,7 +672,7 @@ scale = Vector2(0.47630203, 0.5552083)
 sprite_frames = SubResource("SpriteFrames_ncqna")
 animation = &"Walk_Up_Right"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=378155614]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=378155614 groups=["Player"]]
 position = Vector2(1.3333334, 26.666666)
 shape = SubResource("CapsuleShape2D_ncqna")
 

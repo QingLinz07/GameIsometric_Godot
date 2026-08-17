@@ -150,8 +150,8 @@ func use_skill(slot_index: int) -> void:
 		elif "Up" in anim_name: look_dir = Vector2.UP
 		elif "Down" in anim_name: look_dir = Vector2.DOWN
 	
-	if skill_instance.has_method("initialize"):
-		skill_instance.initialize(look_dir)
+	if skill_instance.has_method("Initialize"):
+		skill_instance.Initialize(look_dir)
 		
 	get_tree().current_scene.add_child(skill_instance)
 

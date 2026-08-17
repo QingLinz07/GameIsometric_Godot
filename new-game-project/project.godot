@@ -40,6 +40,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="New Game Project"
 
+[global_group]
+
+Player=""
+
 [gui]
 
 theme/default_font_multichannel_signed_distance_field=true
