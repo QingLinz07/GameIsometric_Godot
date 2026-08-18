@@ -8,6 +8,10 @@ public partial class Enemy : CharacterBody2D
 	[Export] public float MaxHealth { get; set; } = 100f;
 	[Export] public float MoveSpeed { get; set; } = 120f;
 	[Export] public float Damage { get; set; } = 10f;
+	[Export] public float respawnTime = 5.0f;          // Thời gian chờ spawn
+	[Export] public int maxRespawnCount = 3;
+
+	private bool isInitialized = false;
 
 	[ExportGroup("Behavior Settings")]
 	[Export] public float AttackCooldown { get; set; } = 1.5f;
@@ -18,6 +22,8 @@ public partial class Enemy : CharacterBody2D
 	protected bool isAttacking = false;
 	protected float attackTimer = 0f;
 
+	[Export] private NodePath hurtboxPath = "Hurtbox";
+	private Area2D hurtbox;
 	protected Area2D patrolArea;
 	protected CollisionPolygon2D patrolPolygon;
 	protected Vector2[] cachedPolygonPoints;
@@ -41,6 +47,14 @@ public partial class Enemy : CharacterBody2D
 		nameTagLabel = GetNodeOrNull<Label>("UI/NameTagLabel");
 		healthBar = GetNodeOrNull<ProgressBar>("UI/HealthBar");
 
+
+		hurtbox = GetNode<Area2D>(hurtboxPath);
+		if (hurtbox != null)
+		{
+			// Kết nối signal khi có Area2D khác (như Hitbox của Skill) chạm vào Hurtbox
+			hurtbox.AreaEntered += OnHurtboxAreaEntered;
+		}
+
 		if (nameTagLabel != null) nameTagLabel.Text = EnemyName;
 		UpdateHealthBar();
 
@@ -62,6 +76,10 @@ public partial class Enemy : CharacterBody2D
 		}
 	}
 
+	private void OnHurtboxAreaEntered(Area2D area)
+	{
+
+	}
 	public override void _PhysicsProcess(double delta)
 	{
 		if (attackTimer > 0)
@@ -332,7 +350,15 @@ public partial class Enemy : CharacterBody2D
 
 	protected virtual void Die()
 	{
-		//GD.Print($"{EnemyName} died.");
+		string scenePath = SceneFilePath;
+		var spawner = GetNodeOrNull<EnemySpawner>("/root/EnemySpawner");
+		GD.Print($"Enemy chết! ScenePath: {scenePath} | MaxRespawnCount hiện tại: {maxRespawnCount}");
+		// Chỉ gọi respawn nếu số lần spawn còn lại > 0
+		if (spawner != null && !string.IsNullOrEmpty(scenePath))
+		{
+			spawner.RegisterDeadEnemy(scenePath, GlobalPosition, respawnTime, maxRespawnCount);
+		}
+
 		QueueFree();
 	}
 

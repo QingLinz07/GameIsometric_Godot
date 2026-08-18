@@ -569,12 +569,6 @@ polygon = PackedVector2Array(-912, -1643, -909, -1606, -868, -1614, -870, -1663)
 [node name="CollisionPolygon2D71" type="CollisionPolygon2D" parent="NavigationRegion2D/Vung_Khong_Di_Duoc" unique_id=513222976]
 polygon = PackedVector2Array(-125, -1859, -120, -1814, -89, -1828, -90, -1871)
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=434985406]
-_spawnable_scenes = PackedStringArray("uid://diosbw5vuhhfp")
-spawn_path = NodePath("../Players")
-
-[node name="Players" type="Node2D" parent="." unique_id=1454354513]
-
 [node name="Nhac_Nen" type="AudioStreamPlayer2D" parent="." unique_id=1202533683]
 stream = ExtResource("3_xl588")
 autoplay = true
@@ -584,7 +578,7 @@ parameters/looping = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VungDiChuyenCuaCao" unique_id=251952281]
 position = Vector2(-6, -85)
-polygon = PackedVector2Array(3478, 1029, 4598, 467, 5216, 668, 5205, 1262, 4655, 1807, 3518, 1663)
+polygon = PackedVector2Array(2697, 1151, 3868, 618, 4863, 170, 6212, 498, 4208, 1695, 3138, 1659)
 
 [node name="Cáo" type="Control" parent="." unique_id=1321217397]
 layout_mode = 3
@@ -593,25 +587,37 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="EnemyBase" parent="Cáo" unique_id=54232785 instance=ExtResource("5_3xabq")]
-position = Vector2(4444, 710)
-PatrolAreaPath = NodePath("../../VungDiChuyenCuaCao")
+position = Vector2(3837, 1125)
 
-[node name="EnemyBase2" parent="Cáo" unique_id=2142977858 instance=ExtResource("5_3xabq")]
-position = Vector2(4909, 825)
-PatrolAreaPath = NodePath("../../VungDiChuyenCuaCao")
+[node name="EnemyBase2" parent="Cáo" unique_id=832320040 instance=ExtResource("5_3xabq")]
+position = Vector2(4192, 983)
 
-[node name="EnemyBase3" parent="Cáo" unique_id=146383384 instance=ExtResource("5_3xabq")]
-position = Vector2(3652, 939)
-PatrolAreaPath = NodePath("../../VungDiChuyenCuaCao")
+[node name="EnemyBase3" parent="Cáo" unique_id=633899031 instance=ExtResource("5_3xabq")]
+position = Vector2(4166, 662)
 
-[node name="EnemyBase4" parent="Cáo" unique_id=675109258 instance=ExtResource("5_3xabq")]
-position = Vector2(4112, 1112)
-PatrolAreaPath = NodePath("../../VungDiChuyenCuaCao")
+[node name="EnemyBase4" parent="Cáo" unique_id=1606956031 instance=ExtResource("5_3xabq")]
+position = Vector2(4588, 567)
 
-[node name="EnemyBase5" parent="Cáo" unique_id=1190666098 instance=ExtResource("5_3xabq")]
-position = Vector2(4632, 1267)
-PatrolAreaPath = NodePath("../../VungDiChuyenCuaCao")
+[node name="EnemyBase5" parent="Cáo" unique_id=756720848 instance=ExtResource("5_3xabq")]
+position = Vector2(4686, 863)
 
-[node name="EnemyBase6" parent="Cáo" unique_id=1420902081 instance=ExtResource("5_3xabq")]
-position = Vector2(3743, 1235)
-PatrolAreaPath = NodePath("../../VungDiChuyenCuaCao")
+[node name="EnemyBase6" parent="Cáo" unique_id=1844697790 instance=ExtResource("5_3xabq")]
+position = Vector2(4663, 1112)
+
+[node name="EnemyBase7" parent="Cáo" unique_id=971659183 instance=ExtResource("5_3xabq")]
+position = Vector2(5263, 768)
+
+[node name="EnemyBase8" parent="Cáo" unique_id=1623422395 instance=ExtResource("5_3xabq")]
+position = Vector2(4997, 514)
+
+[node name="EnemyBase9" parent="Cáo" unique_id=973597906 instance=ExtResource("5_3xabq")]
+position = Vector2(4876, 255)
+
+[node name="EnemyBase10" parent="Cáo" unique_id=1573182330 instance=ExtResource("5_3xabq")]
+position = Vector2(5652, 471)
+
+[node name="EnemyBase11" parent="Cáo" unique_id=1629609292 instance=ExtResource("5_3xabq")]
+position = Vector2(5250, 576)
+
+[node name="EnemyBase12" parent="Cáo" unique_id=1834527486 instance=ExtResource("5_3xabq")]
+position = Vector2(4572, 350)

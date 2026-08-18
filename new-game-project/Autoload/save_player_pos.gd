@@ -12,7 +12,7 @@ func _enter_tree() -> void:
 	
 	# Tạo Timer tự động lưu mỗi 3 giây
 	save_timer = Timer.new()
-	save_timer.wait_time = 3.0
+	save_timer.wait_time = 5.0
 	save_timer.autostart = true
 	save_timer.timeout.connect(_on_auto_save_timeout)
 	add_child(save_timer)

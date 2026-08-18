@@ -60,3 +60,17 @@ func update_player_property(key: String, value, auto_save: bool = true) -> void:
 	
 	if auto_save:
 		save_current_player()
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST or what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		print("[GameManager] Phát hiện yêu cầu thoát game! Đang tiến hành lưu khẩn cấp...")
+		
+		# 1. Đồng bộ dữ liệu mới nhất từ Player lần cuối
+		if AutoSaveManager.has_method("sync_player_data_to_cache"):
+			AutoSaveManager.sync_player_data_to_cache()
+			
+		# 2. Ghi file JSON ngay lập tức
+		save_current_player()
+		
+		# 3. Cho phép thoát game an toàn
+		get_tree().quit()

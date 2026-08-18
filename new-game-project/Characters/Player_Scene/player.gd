@@ -46,7 +46,7 @@ func _ready() -> void:
 
 	stamina.Initialize(max_stamina, current_stamina)
 	health.Initialize(max_hp, current_hp)
-	SavePlayerPos.setup_tracking(player_name, self)
+	#SavePlayerPos.setup_tracking(player_name, self)
 	
 	if has_node("Camera2D"):
 		$Camera2D.make_current()

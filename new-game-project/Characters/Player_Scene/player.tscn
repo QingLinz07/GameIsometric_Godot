@@ -660,7 +660,7 @@ animations = [{
 radius = 3.3333333
 height = 6.6666665
 
-[sub_resource type="FontVariation" id="FontVariation_bcdvr"]
+[sub_resource type="FontVariation" id="FontVariation_02uvp"]
 
 [node name="Player" type="CharacterBody2D" unique_id=780113477 groups=["Player"]]
 scale = Vector2(1.5, 1.5)
@@ -695,7 +695,7 @@ offset_left = -49.333332
 offset_top = -58.666664
 offset_right = 37.666668
 offset_bottom = -39.125
-theme_override_fonts/font = SubResource("FontVariation_bcdvr")
+theme_override_fonts/font = SubResource("FontVariation_02uvp")
 theme_override_font_sizes/font_size = 10
 text = "Player Name"
 horizontal_alignment = 1

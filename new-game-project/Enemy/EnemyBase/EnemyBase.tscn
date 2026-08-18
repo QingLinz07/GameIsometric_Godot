@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://01omgqg02enw" path="res://Enemy/EnemyBase/Enemy.cs" id="1_6df84"]
 
+[sub_resource type="FontVariation" id="FontVariation_wdqmn"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ss1a2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02uvp"]
@@ -24,6 +26,7 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = SubResource("FontVariation_wdqmn")
 
 [node name="HealthBar" type="ProgressBar" parent="UI" unique_id=2018433583]
 layout_mode = 0
@@ -32,3 +35,15 @@ offset_bottom = 27.0
 theme_override_styles/background = SubResource("StyleBoxFlat_ss1a2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_02uvp")
 show_percentage = false
+
+[node name="AggroArea" type="Area2D" parent="." unique_id=209123920]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea" unique_id=340662537]
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1619814804]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1032050637]
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1327059987]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=111851775]

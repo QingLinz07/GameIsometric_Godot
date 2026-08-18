@@ -641,16 +641,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_dovg6"]
 radius = 19.416487
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ncqna"]
-radius = 309.00162
+[sub_resource type="CircleShape2D" id="CircleShape2D_6df84"]
+radius = 197.09135
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0ki7c"]
-radius = 48.6621
+[sub_resource type="CircleShape2D" id="CircleShape2D_ss1a2"]
+radius = 54.34151
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02uvp"]
+size = Vector2(44, 25)
 
 [node name="EnemyBase" unique_id=54232785 instance=ExtResource("1_6gdau")]
 script = ExtResource("2_vi0pc")
-AttackCooldown = 1.5
-PatrolAreaPath = null
+respawnTime = 10.0
+maxRespawnCount = -1
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=921696658]
 sprite_frames = SubResource("SpriteFrames_6gdau")
@@ -677,12 +680,12 @@ offset_top = -59.0
 offset_right = 35.0
 offset_bottom = -49.0
 
-[node name="AggroArea" type="Area2D" parent="." index="3" unique_id=1931302902]
+[node name="CollisionShape2D" parent="AggroArea" parent_id_path=PackedInt32Array(209123920) index="0" unique_id=340662537]
+shape = SubResource("CircleShape2D_6df84")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea" index="0" unique_id=240775749]
-shape = SubResource("CircleShape2D_ncqna")
+[node name="CollisionShape2D" parent="AttackArea" parent_id_path=PackedInt32Array(1619814804) index="0" unique_id=1032050637]
+shape = SubResource("CircleShape2D_ss1a2")
 
-[node name="AttackArea" type="Area2D" parent="." index="4" unique_id=12837617]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0" unique_id=1500836538]
-shape = SubResource("CircleShape2D_0ki7c")
+[node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(1327059987) index="0" unique_id=111851775]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_02uvp")
