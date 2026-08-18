@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dauqqdoc22fs4"]
+
+[ext_resource type="PackedScene" uid="uid://dsl1oc1mp0e04" path="res://Core/Skill/Base/Base.tscn" id="1_dkkq5"]
+[ext_resource type="Script" uid="uid://bbyo6cjeonvqk" path="res://Core/Skill/Skill_Tam_Xa/Skill_Tam_Xa_Base/BaseSkillTamXa.cs" id="2_2rgqd"]
+
+[node name="BaseSkillTamXa" unique_id=415313355 instance=ExtResource("1_dkkq5")]
+script = ExtResource("2_2rgqd")

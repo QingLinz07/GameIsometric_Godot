@@ -31,7 +31,9 @@ var max_hp = GameManager.current_player_data.get("max_hp", 100)
 var current_stamina = GameManager.current_player_data.get("stamina", 100)
 var max_stamina = GameManager.current_player_data.get("max_stamina", 100)
 
+
 func _ready() -> void:
+	PlayerManager.current_player = self
 	# Truyền thêm nav_agent vào script C#
 	movement.PlayerMovementCreate(self, sprite, shadow, nav_agent, speed, turn_smoothness)
 	

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dsl1oc1mp0e04"]
 
-[ext_resource type="Script" uid="uid://op5r2sa1l6i0" path="res://Core/Skill/Skill_Tam_Xa/Base/Base.cs" id="1_midjc"]
+[ext_resource type="Script" uid="uid://op5r2sa1l6i0" path="res://Core/Skill/Base/Base.cs" id="1_midjc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fcdmv"]
 animations = []

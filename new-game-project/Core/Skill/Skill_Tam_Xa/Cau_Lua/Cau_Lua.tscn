@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://n6vhpqeyeve0"]
+[gd_scene format=3 uid="uid://p437rjryr8rq"]
 
-[ext_resource type="PackedScene" uid="uid://dsl1oc1mp0e04" path="res://Core/Skill/Skill_Tam_Xa/Base/Base_Skill_Tam_Xa.tscn" id="1_1eeu3"]
+[ext_resource type="PackedScene" uid="uid://dauqqdoc22fs4" path="res://Core/Skill/Skill_Tam_Xa/Skill_Tam_Xa_Base/base_skill_tam_xa.tscn" id="1_1eeu3"]
 [ext_resource type="Texture2D" uid="uid://dnu04ler2d4t7" path="res://Core/Skill/Skill_Tam_Xa/Cau_Lua/Asset/frame_0.png" id="2_83tfh"]
 [ext_resource type="Script" uid="uid://464tw8icm18h" path="res://Core/Skill/Skill_Tam_Xa/Cau_Lua/CauLua.cs" id="2_nhnao"]
 [ext_resource type="Texture2D" uid="uid://b6mycmwi3qwjq" path="res://Core/Skill/Skill_Tam_Xa/Cau_Lua/Asset/frame_1.png" id="3_nhnao"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cunsfhw17nkxm" path="res://Core/Skill/Skill_Tam_Xa/Cau_Lua/Asset/frame_4.png" id="6_fhw8d"]
 [ext_resource type="Texture2D" uid="uid://c6vfcctp6cutm" path="res://Core/Skill/Skill_Tam_Xa/Cau_Lua/Asset/frame_5.png" id="7_3lnx3"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_midjc"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ji3y"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -32,19 +32,18 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Skill",
-"speed": 10.0
+"speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yuj0w"]
-radius = 55.470715
+[sub_resource type="CircleShape2D" id="CircleShape2D_phsqg"]
+radius = 37.161808
 
 [node name="BaseSkillTamXa" unique_id=415313355 instance=ExtResource("1_1eeu3")]
 script = ExtResource("2_nhnao")
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=2077738215]
-sprite_frames = SubResource("SpriteFrames_midjc")
+sprite_frames = SubResource("SpriteFrames_1ji3y")
 animation = &"Skill"
-frame_progress = 0.42630062
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=860510640]
-shape = SubResource("CircleShape2D_yuj0w")
+shape = SubResource("CircleShape2D_phsqg")

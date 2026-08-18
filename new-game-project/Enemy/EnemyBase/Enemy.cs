@@ -5,9 +5,9 @@ public partial class Enemy : CharacterBody2D
 {
 	[ExportGroup("Stats")]
 	[Export] public string EnemyName { get; set; } = "Enemy";
-	[Export] public float MaxHealth { get; set; } = 100f;
-	[Export] public float MoveSpeed { get; set; } = 120f;
-	[Export] public float Damage { get; set; } = 10f;
+	[Export] public virtual float MaxHealth { get; set; } = 100f;
+	[Export] public virtual float MoveSpeed { get; set; } = 120f;
+	[Export] public virtual float Damage { get; set; } = 10f;
 	[Export] public float respawnTime = 5.0f;          // Thời gian chờ spawn
 	[Export] public int maxRespawnCount = 3;
 
@@ -340,7 +340,7 @@ public partial class Enemy : CharacterBody2D
 		currentHealth = Mathf.Clamp(currentHealth - amount, 0, MaxHealth);
 		UpdateHealthBar();
 
-		//GD.Print($"{EnemyName} took {amount} damage. HP left: {currentHealth}");
+		GD.Print($"{EnemyName} took {amount} damage. HP left: {currentHealth}");
 
 		if (currentHealth <= 0)
 		{

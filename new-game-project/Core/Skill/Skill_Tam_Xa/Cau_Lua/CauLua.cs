@@ -1,15 +1,14 @@
 using Godot;
 using System;
 
-public partial class CauLua : Base
+public partial class CauLua : BaseSkillTamXa
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		speed = 400f;
-		max_range = 200f;
-		damage = 25f;
-		base._Ready();
-	}
+
+	public override float Stamina { get; set; } = 5f;
+	public override float Damage { get; set; } = 10f;
+	public override float Cooldown { get; set; } = 2f;
+
+	protected override float speed { get; set; } = 400f;
+	protected override float max_range { get; set; } = 200f;
 
 }

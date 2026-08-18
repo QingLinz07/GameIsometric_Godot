@@ -26,6 +26,7 @@ SceneManager="*uid://bpei4h6ay0shs"
 SoundManager="*uid://dixqostjf3mas"
 EnemySpawner="*uid://dlx2cratm27rm"
 AutoSaveManager="*uid://beogdrfqghwck"
+PlayerManager="*uid://dpirqqk8ht858"
 
 [display]
 

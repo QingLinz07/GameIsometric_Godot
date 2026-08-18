@@ -1,14 +1,15 @@
 using Godot;
 using System;
+using System.Transactions;
 
 public partial class StaminaSystem : Node
 {
-	[Export]
+    [Export]
     private float current_stamina { get; set; }
     [Export]
     private float max_stamina { get; set; }
 
-    public StaminaSystem() {}
+    public StaminaSystem() { }
 
     public void Initialize(float p_max_stamina, float p_current_stamina)
     {
