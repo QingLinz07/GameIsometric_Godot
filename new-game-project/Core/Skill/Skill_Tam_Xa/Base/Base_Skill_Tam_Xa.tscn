@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dsl1oc1mp0e04"]
+
+[ext_resource type="Script" uid="uid://op5r2sa1l6i0" path="res://Core/Skill/Skill_Tam_Xa/Base/Base.cs" id="1_midjc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fcdmv"]
+animations = []
+
+[node name="BaseSkillTamXa" type="Area2D" unique_id=415313355]
+script = ExtResource("1_midjc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2077738215]
+sprite_frames = SubResource("SpriteFrames_fcdmv")
+animation = &""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=860510640]

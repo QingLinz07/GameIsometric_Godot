@@ -1,13 +1,13 @@
 {
 	"character_name": "阮维兴",
 	"exp": 50.0,
-	"hp": 190.0,
+	"hp": 150.0,
 	"level": 1.0,
 	"map_path": "res://Main/Main.tscn",
 	"max_exp": 100.0,
 	"max_hp": 1000.0,
 	"max_stamina": 100.0,
-	"pos_x": 2260.6416015625,
-	"pos_y": -259.778961181641,
+	"pos_x": 3244.75048828125,
+	"pos_y": 289.527984619141,
 	"stamina": 100.0
 }

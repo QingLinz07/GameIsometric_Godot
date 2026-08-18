@@ -7,12 +7,12 @@ var player_ref: Node2D = null
 
 # Danh sách icon tương ứng với từng đường dẫn skill
 var skill_icons = {
-	"res://Core/Skill/Cau_Lua/Cau_Lua.tscn": preload("res://Core/Skill/Cau_Lua/Asset/frame_3.png")
+	"res://Core/Skill/Skill_Tam_Xa/Cau_Lua/Cau_Lua.tscn": preload("res://Core/Skill/Skill_Tam_Xa/Cau_Lua/Asset/frame_3.png")
 }
 
 func _ready() -> void:
 	equipped_skills.resize(6)
-	equipped_skills[0] = load("res://Core/Skill/Cau_Lua/Cau_Lua.tscn")
+	equipped_skills[0] = load("res://Core/Skill/Skill_Tam_Xa/Cau_Lua/Cau_Lua.tscn")
 	setup_slots()
 	update_skill_bar_ui()
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6mycmwi3qwjq"
-path="res://.godot/imported/frame_1.png-26103403e1a24e8186821c27de40574c.ctex"
+uid="uid://cunsfhw17nkxm"
+path="res://.godot/imported/frame_4.png-61700dba6133741bd44383ce76e61e1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Core/Skill/Cau_Lua/Asset/frame_1.png"
-dest_files=["res://.godot/imported/frame_1.png-26103403e1a24e8186821c27de40574c.ctex"]
+source_file="res://Core/Skill/Skill_Tam_Xa/Cau_Lua/Asset/frame_4.png"
+dest_files=["res://.godot/imported/frame_4.png-61700dba6133741bd44383ce76e61e1b.ctex"]
 
 [params]
 

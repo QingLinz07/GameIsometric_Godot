@@ -1,15 +1,16 @@
 using Godot;
 using System;
 
-public partial class cau_lua : Area2D
+public partial class Base : Area2D
 {
 	[Export]
-	private float speed = 400f;
-	private float max_range = 200f;
+	protected float speed { get; set; } = 400f;
+	protected float max_range { get; set; } = 200f;
 	private Vector2 direction = Vector2.Right;
 	private float distance_traveled = 0f;
 
-	[Export] private float damage = 25f;
+	[Export] protected float damage { get; set; } = 25f;
+
 	public override void _Ready()
 	{
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Skill");
@@ -17,7 +18,7 @@ public partial class cau_lua : Area2D
 		AreaEntered += OnAreaEntered;
 	}
 
-	public void Initialize(Vector2 dir) // Nên viết hoa tên hàm theo chuẩn C#
+	public virtual void Initialize(Vector2 dir) // Nên viết hoa tên hàm theo chuẩn C#
 	{
 		direction = dir;
 		Rotation = direction.Angle();
@@ -35,7 +36,7 @@ public partial class cau_lua : Area2D
 			QueueFree();
 		}
 	}
-	private void OnAreaEntered(Area2D area)
+	public virtual void OnAreaEntered(Area2D area)
 	{
 		// Kiểm tra xem thứ mà skill chạm vào có phải là Hurtbox không 
 		// (Dựa vào tên node hoặc Group "Hurtbox" mà bạn đặt cho node Hurtbox của Enemy)
@@ -50,7 +51,7 @@ public partial class cau_lua : Area2D
 				enemy.Call("TakeDamage", damage); // Gọi hàm TakeDamage bên Enemy
 			}
 
-			// Va chạm xong thì hủy skill cầu lửa đi
+			// Va chạm xong thì hủy skill
 			QueueFree();
 		}
 	}
