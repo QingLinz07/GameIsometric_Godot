@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cx8yfv00o6n1f"]
 
 [ext_resource type="Script" uid="uid://df3eob46afwbr" path="res://Maps/Thanh_Truong_An/thanh_truong_an.gd" id="1_0bwye"]
-[ext_resource type="Texture2D" uid="uid://bimfcdo6plej1" path="res://Asset/Map/ThanhTruongAn.jpg" id="1_s0jow"]
 [ext_resource type="Script" uid="uid://cgyvbec2hqcwp" path="res://Maps/Thanh_Truong_An/area_2d.gd" id="3_0jhfh"]
+[ext_resource type="Script" uid="uid://d25u4f3j56200" path="res://Maps/Thanh_Truong_An/map_grid.gd" id="3_cqmyy"]
 [ext_resource type="AudioStream" uid="uid://bjq3hhrca8gf8" path="res://Asset/Musics/《河阳城》.mp3" id="3_xl588"]
 [ext_resource type="PackedScene" uid="uid://cnt0602dhlly8" path="res://Enemy/Cao/Cao.tscn" id="5_3xabq"]
 
@@ -18,12 +18,15 @@ agent_radius = 30.0
 y_sort_enabled = true
 script = ExtResource("1_0bwye")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1523831761]
+[node name="Sprite2D_Goc" type="Sprite2D" parent="." unique_id=1523831761]
+visible = false
 z_index = -2
 y_sort_enabled = true
 position = Vector2(553, -1306)
-texture = ExtResource("1_s0jow")
 region_rect = Rect2(6237, 5094, 539, 415)
+
+[node name="MapGrid" type="Node2D" parent="." unique_id=2057553866]
+script = ExtResource("3_cqmyy")
 
 [node name="Vung_Di_Xuyen_Qua" type="Area2D" parent="." unique_id=1153043421]
 visible = false
