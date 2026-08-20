@@ -3,6 +3,7 @@ using System.Linq;
 
 public partial class Enemy : CharacterBody2D
 {
+	private PackedScene _damagePopupScene = GD.Load<PackedScene>("res://Core/DamagePopup/DamagePopup.tscn");
 	[ExportGroup("Stats")]
 	[Export] public string EnemyName { get; set; } = "Enemy";
 	[Export] public virtual float MaxHealth { get; set; } = 100f;
@@ -341,11 +342,40 @@ public partial class Enemy : CharacterBody2D
 		UpdateHealthBar();
 
 		GD.Print($"{EnemyName} took {amount} damage. HP left: {currentHealth}");
-
+		ShowDamagePopup(amount);
 		if (currentHealth <= 0)
 		{
 			Die();
 		}
+	}
+
+	private void ShowDamagePopup(float amount)
+	{
+		if (_damagePopupScene == null) return;
+
+		var popup = _damagePopupScene.Instantiate<DamagePopup>();
+
+		// 1. TỰ ĐỘNG TÌM ĐỈNH ĐẦU (HeadMarker)
+		// Code sẽ tìm node con tên "HeadMarker" trong con quái này
+		var headMarker = GetNodeOrNull<Node2D>("HeadMarker");
+
+		if (headMarker != null)
+		{
+			// Nếu có Marker trên đầu, lấy chính xác vị trí thế giới của nó
+			popup.GlobalPosition = headMarker.GlobalPosition;
+		}
+		else
+		{
+			// Nếu quên đặt Marker, dùng cách cũ (lấy gốc chân quái trừ đi 40 pixel)
+			popup.GlobalPosition = GlobalPosition + new Vector2(0, -40);
+		}
+
+		// 2. Khởi tạo số damage và hiệu ứng
+		Color yellowColor = new Color(1, 0.8f, 0f); // Màu vàng MMORPG
+		popup.Initialize(amount, 28, yellowColor, null, true);
+
+		// 3. Đưa vào Scene chính
+		GetTree().CurrentScene.AddChild(popup);
 	}
 
 	protected virtual void Die()

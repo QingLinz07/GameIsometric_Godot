@@ -667,8 +667,8 @@ scale = Vector2(1.5, 1.5)
 script = ExtResource("1_sphr4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=569511578]
-position = Vector2(5.9604645e-08, 0)
-scale = Vector2(0.47630203, 0.5552083)
+position = Vector2(0, -0.6666665)
+scale = Vector2(0.33574218, 0.42421874)
 sprite_frames = SubResource("SpriteFrames_ncqna")
 animation = &"Walk_Up_Right"
 
@@ -691,10 +691,10 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("146_wdqmn")
 
 [node name="Nametag" type="Label" parent="." unique_id=808127832]
-offset_left = -49.333332
-offset_top = -58.666664
-offset_right = 37.666668
-offset_bottom = -39.125
+offset_left = -31.333334
+offset_top = -55.333332
+offset_right = 30.666666
+offset_bottom = -35.791668
 theme_override_fonts/font = SubResource("FontVariation_02uvp")
 theme_override_font_sizes/font_size = 10
 text = "Player Name"

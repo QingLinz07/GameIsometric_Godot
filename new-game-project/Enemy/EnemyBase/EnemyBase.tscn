@@ -47,3 +47,5 @@ show_percentage = false
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1327059987]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=111851775]
+
+[node name="HeadMarker" type="Marker2D" parent="." unique_id=369724070]

@@ -642,7 +642,7 @@ animations = [{
 radius = 19.416487
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6df84"]
-radius = 197.09135
+radius = 157.0796
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ss1a2"]
 radius = 54.34151
@@ -656,6 +656,8 @@ respawnTime = 10.0
 maxRespawnCount = -1
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=921696658]
+position = Vector2(1.9073486e-06, -0.9999981)
+scale = Vector2(0.69166666, 0.69298244)
 sprite_frames = SubResource("SpriteFrames_6gdau")
 animation = &"Stand_Left"
 
@@ -666,26 +668,38 @@ rotation = 1.5696069
 shape = SubResource("CircleShape2D_dovg6")
 
 [node name="NameTagLabel" parent="UI" parent_id_path=PackedInt32Array(1442754423) index="0" unique_id=266653844]
-offset_left = -36.0
-offset_top = -93.0
-offset_right = 35.0
-offset_bottom = -70.0
+offset_left = -35.0
+offset_top = -72.0
+offset_right = 36.0
+offset_bottom = -49.0
 text = "Cáo vàng"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HealthBar" parent="UI" parent_id_path=PackedInt32Array(1442754423) index="1" unique_id=2018433583]
-offset_left = -33.0
-offset_top = -59.0
-offset_right = 35.0
-offset_bottom = -49.0
+offset_left = -34.0
+offset_top = -44.0
+offset_right = 34.0
+offset_bottom = -38.0
 
-[node name="CollisionShape2D" parent="AggroArea" parent_id_path=PackedInt32Array(209123920) index="0" unique_id=340662537]
+[node name="AggroArea" parent="." index="3" unique_id=209123920]
+visible = false
+
+[node name="CollisionShape2D" parent="AggroArea" index="0" unique_id=340662537]
 shape = SubResource("CircleShape2D_6df84")
 
-[node name="CollisionShape2D" parent="AttackArea" parent_id_path=PackedInt32Array(1619814804) index="0" unique_id=1032050637]
+[node name="AttackArea" parent="." index="4" unique_id=1619814804]
+visible = false
+
+[node name="CollisionShape2D" parent="AttackArea" index="0" unique_id=1032050637]
 shape = SubResource("CircleShape2D_ss1a2")
 
-[node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(1327059987) index="0" unique_id=111851775]
+[node name="Hurtbox" parent="." index="5" unique_id=1327059987]
+visible = false
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=111851775]
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_02uvp")
+
+[node name="HeadMarker" parent="." index="6" unique_id=369724070]
+position = Vector2(0, -76)
