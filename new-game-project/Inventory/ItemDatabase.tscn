@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cx0myd3yyqbvq"]
+
+[ext_resource type="Script" uid="uid://1qkgtsc73k4u" path="res://Inventory/ItemDatabase.cs" id="1_i4w8i"]
+[ext_resource type="Script" uid="uid://cdsqhfak1pmju" path="res://Inventory/ItemData.cs" id="2_s73jo"]
+[ext_resource type="Resource" uid="uid://b5qufcvb8v384" path="res://Inventory/Item/cac_gia/cac_gia.tres" id="3_ih0rw"]
+[ext_resource type="Resource" uid="uid://dlq1smxj7eeuv" path="res://Inventory/Item/Item_Tri_Lieu/BinhMauNho/BinhMauNho.tres" id="4_ih0rw"]
+
+[node name="ItemDatabase" type="Control" unique_id=472584836]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_i4w8i")
+allItems = Array[ExtResource("2_s73jo")]([ExtResource("3_ih0rw"), ExtResource("4_ih0rw")])

@@ -24,6 +24,9 @@ const SKILL_BAR_SCENE = preload("res://UI/Skill_Bar/Skill_Bar.tscn")
 
 @export var username: String = "Player_1"
 
+@export var inventory_ui: Control # Thay "/root/MainScene/InventoryUI"
+const Binh_Mau_Nho = preload("res://Inventory/Item/Item_Tri_Lieu/BinhMauNho/BinhMauNho.tres")
+
 # Các Biến Lưu Dữ Liệu Nhân Vật
 var current_hp = GameManager.current_player_data.get("hp", 100)
 var max_hp = GameManager.current_player_data.get("max_hp", 100)
@@ -101,12 +104,18 @@ func _input(event):
 		
 		# Các phím test cũ
 		elif event.keycode == KEY_H:
-			CongMau(50)
+			# Tìm node InventoryUI ngay lúc bấm phím bằng đường dẫn hoặc nhóm
+			var inv = get_tree().get_first_node_in_group("InventoryUI")
+			if inv != null and inv.has_method("AddItem"):
+				inv.AddItem(Binh_Mau_Nho, 3)
+				print("Đã thêm 3 bình máu nhỏ vào túi đồ từ GDScript!")
+			else:
+				print("Lỗi: Không tìm thấy node InventoryUI trong group hoặc chưa add vào group 'InventoryUI'!")
 		elif event.keycode == KEY_J:
 			TruStamina(20)
 
 # Hàm phụ để gọi cho gọn
 func _trigger_skill(index: int):
 	if skill_bar:
-		print("Đang gọi skill tại ô: ", index + 1)
+		#print("Đang gọi skill tại ô: ", index + 1)
 		skill_bar.use_skill(index)

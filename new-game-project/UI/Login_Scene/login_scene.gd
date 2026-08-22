@@ -8,7 +8,7 @@ var custom_font = load("res://Asset/Font/Noto_Serif_SC/NotoSerifSC-VariableFont_
 @onready var load_button = $Login_Chinh/load_game
 @onready var exit_button = $Login_Chinh/exit_game
 # Tạo Nhân Vật
-@onready var username_input = $Tao_Nhan_Vat/UsernameInput  
+@onready var username_input = $Tao_Nhan_Vat/UsernameInput
 @onready var status_label = $Tao_Nhan_Vat/StatusLabel
 @onready var register_button = $Tao_Nhan_Vat/RegisterButton
 @onready var back_button = $back_button
@@ -87,7 +87,7 @@ func refresh_character_list():
 				btn.custom_minimum_size = Vector2(400, 200) # Kích thước tổng của khung
 				btn.ignore_texture_size = true
 				btn.stretch_mode = TextureButton.STRETCH_SCALE
-				btn.texture_normal = preload("res://UI/Login_Scene/intro/khung_load_nhan_vat.png") 
+				btn.texture_normal = preload("res://UI/Login_Scene/intro/khung_load_nhan_vat.png")
 				btn.pressed.connect(func(): _on_load_character_pressed(char_name))
 				
 				# 4. TẠO TÊN NHÂN VẬT (Tự chỉnh tọa độ ở đây)
@@ -114,7 +114,7 @@ func refresh_character_list():
 				delete_btn.ignore_texture_size = true
 				delete_btn.stretch_mode = TextureButton.STRETCH_SCALE
 				# Gán hình ảnh dấu X của bạn vào đây (nếu chưa có ảnh có thể đổi thành Button.new())
-				delete_btn.texture_normal = preload("res://UI/Login_Scene/intro/x.png") 
+				delete_btn.texture_normal = preload("res://UI/Login_Scene/intro/x.png")
 				
 				delete_btn.position = Vector2(310, 45) # <-- Tọa độ X, Y của nút X (Góc trên bên phải khung)
 				
@@ -171,8 +171,8 @@ func _tao_nhan_vat() -> void:
 func _load_nhan_vat() -> void:
 	$Login_Chinh.visible = false
 	$Tao_Nhan_Vat.visible = false
-	$Load_Nhan_Vat.visible = true	
-	$back_button.visible = true	
+	$Load_Nhan_Vat.visible = true
+	$back_button.visible = true
 
 
 #--- NÚT CHUYỂN ĐẾN CÁC PHIÊN ---
@@ -200,10 +200,10 @@ func _exit_game_pressed():
 	
 	# 4. Thêm vào màn hình và hiện lên giữa màn hình
 	get_tree().root.add_child(dialog)
-	dialog.popup_centered()	
+	dialog.popup_centered()
 
 func _button_back_pressed():
-	_login_chinh()		
+	_login_chinh()
 # --- TẠO NHÂN VẬT MỚI ---
 func _on_create_character_pressed():
 	var character_name = username_input.text.strip_edges()
@@ -266,6 +266,11 @@ func _on_load_character_pressed(character_name: String):
 	# -----------------------------	
 		
 	status_label.text = "Đang vào game cho " + character_name + "..."
+
+	# Truyền dữ liệu inventory sang InventoryUI (C#)
+	var inventory_ui = get_tree().get_first_node_in_group("InventoryUI")
+	if inventory_ui and user_data.has("inventory_data"):
+		inventory_ui.LoadInventorySaveData(user_data["inventory_data"])
 	
 	var target_map_path = user_data.get("map_path", DEFAULT_MAP)
 	var spawn_pos = Vector2(float(user_data.get("pos_x", 200.0)), float(user_data.get("pos_y", 200.0)))

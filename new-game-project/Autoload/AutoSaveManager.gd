@@ -73,3 +73,7 @@ func sync_player_data_to_cache() -> void:
 	# Lưu tên nhân vật và map nếu có
 	if "player_name" in player and not player.player_name.is_empty():
 		data["character_name"] = player.player_name
+
+	var inventory_ui = get_tree().get_first_node_in_group("InventoryUI")
+	if inventory_ui and inventory_ui.has_method("GetInventorySaveData"):
+		data["inventory_data"] = inventory_ui.GetInventorySaveData()

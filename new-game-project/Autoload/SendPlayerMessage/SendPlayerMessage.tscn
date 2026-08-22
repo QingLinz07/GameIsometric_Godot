@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b512a51jld8va"]
+
+[ext_resource type="FontFile" uid="uid://bhw6a3hajlbpj" path="res://Asset/Font/Noto_Serif_SC/NotoSerifSC-VariableFont_wght.ttf" id="1_hal7k"]
+[ext_resource type="Script" uid="uid://d1rq0o2elgmiw" path="res://Autoload/SendPlayerMessage/SendPlayerMessage.cs" id="1_tjl5h"]
+
+[node name="SendPlayerMessage" type="CanvasLayer" unique_id=118163093]
+script = ExtResource("1_tjl5h")
+
+[node name="Control" type="Control" parent="." unique_id=2133206615]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=701343584]
+z_index = 100
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -167.5
+offset_top = 30.0
+offset_right = 167.5
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("1_hal7k")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "vãi cả bịa anh người chơi hệ phóng"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

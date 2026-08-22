@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cx8yfv00o6n1f"]
 
-[ext_resource type="Script" uid="uid://df3eob46afwbr" path="res://Maps/Thanh_Truong_An/thanh_truong_an.gd" id="1_0bwye"]
 [ext_resource type="Script" uid="uid://cgyvbec2hqcwp" path="res://Maps/Thanh_Truong_An/area_2d.gd" id="3_0jhfh"]
 [ext_resource type="Script" uid="uid://d25u4f3j56200" path="res://Maps/Thanh_Truong_An/map_grid.gd" id="3_cqmyy"]
 [ext_resource type="AudioStream" uid="uid://bjq3hhrca8gf8" path="res://Asset/Musics/《河阳城》.mp3" id="3_xl588"]
@@ -16,7 +15,6 @@ agent_radius = 30.0
 
 [node name="ThanhTruongAn" type="Node2D" unique_id=1955621244]
 y_sort_enabled = true
-script = ExtResource("1_0bwye")
 
 [node name="Sprite2D_Goc" type="Sprite2D" parent="." unique_id=1523831761]
 visible = false
@@ -572,7 +570,7 @@ polygon = PackedVector2Array(-912, -1643, -909, -1606, -868, -1614, -870, -1663)
 [node name="CollisionPolygon2D71" type="CollisionPolygon2D" parent="NavigationRegion2D/Vung_Khong_Di_Duoc" unique_id=513222976]
 polygon = PackedVector2Array(-125, -1859, -120, -1814, -89, -1828, -90, -1871)
 
-[node name="Nhac_Nen" type="AudioStreamPlayer2D" parent="." unique_id=1202533683]
+[node name="Nhac_Nen" type="AudioStreamPlayer" parent="." unique_id=1633968669]
 stream = ExtResource("3_xl588")
 autoplay = true
 parameters/looping = true

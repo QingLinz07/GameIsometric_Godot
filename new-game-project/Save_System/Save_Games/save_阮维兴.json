@@ -1,13 +1,31 @@
 {
 	"character_name": "阮维兴",
 	"exp": 50.0,
-	"hp": 180.0,
+	"hp": 1000.0,
+	"inventory_data": {
+		"0": {
+			"item_id": "2",
+			"quantity": 47
+		},
+		"1": {
+			"item_id": "2",
+			"quantity": 90
+		},
+		"2": {
+			"item_id": "2",
+			"quantity": 95
+		},
+		"3": {
+			"item_id": "2",
+			"quantity": 6
+		}
+	},
 	"level": 1.0,
 	"map_path": "res://Main/Main.tscn",
 	"max_exp": 100.0,
 	"max_hp": 1000.0,
 	"max_stamina": 1000.0,
-	"pos_x": 4542.875,
-	"pos_y": 1284.91638183594,
-	"stamina": 585.0
+	"pos_x": 668.392639160156,
+	"pos_y": -1088.10717773438,
+	"stamina": 510.0
 }

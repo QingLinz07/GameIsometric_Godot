@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dampbaosnysgm" path="res://Main/main.gd" id="1_83ytx"]
 [ext_resource type="PackedScene" uid="uid://clks5haalba8j" path="res://UI/Stats_UI/Stats_UI.tscn" id="2_83ytx"]
+[ext_resource type="PackedScene" uid="uid://dmcqcav6gv1e3" path="res://Inventory/InventoryUI.tscn" id="2_amygn"]
 
 [node name="Main" type="Node2D" unique_id=71900362]
 script = ExtResource("1_83ytx")
@@ -11,3 +12,5 @@ script = ExtResource("1_83ytx")
 [node name="UI" type="CanvasLayer" parent="." unique_id=1278392070]
 
 [node name="StatsUi" parent="UI" unique_id=174338249 instance=ExtResource("2_83ytx")]
+
+[node name="InventoryUi" parent="UI" unique_id=933625147 instance=ExtResource("2_amygn")]

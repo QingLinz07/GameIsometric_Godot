@@ -208,7 +208,7 @@ func use_skill(slot_index: int) -> void:
 	if "Stamina" in skill_instance:
 		skill_stamina = skill_instance.Stamina
 
-	var player_stamina = PlayerManager.stamina
+	var player_stamina = PlayerManager.get_stamina()
 
 	if (player_stamina >= skill_stamina):
 		PlayerManager.TruStamina(skill_stamina)

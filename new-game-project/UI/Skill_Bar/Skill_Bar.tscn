@@ -2,11 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bd4lnmbpvg5bx" path="res://UI/Skill_Bar/skill_bar.gd" id="1_rll07"]
 [ext_resource type="Script" uid="uid://uhu3xwe0rph4" path="res://UI/Skill_Bar/slot_1.gd" id="2_82jcr"]
-[ext_resource type="Script" uid="uid://bk6vo1a1jleal" path="res://UI/Skill_Bar/slot_2.gd" id="3_0xiwy"]
-[ext_resource type="Script" uid="uid://beyrbn4f683op" path="res://UI/Skill_Bar/slot_3.gd" id="4_tg4ms"]
-[ext_resource type="Script" uid="uid://balhk0r014oaj" path="res://UI/Skill_Bar/slot_4.gd" id="5_7fufn"]
-[ext_resource type="Script" uid="uid://dq2xga0o84r3e" path="res://UI/Skill_Bar/slot_5.gd" id="6_ou1q7"]
-[ext_resource type="Script" uid="uid://br2bfx0mwb5hv" path="res://UI/Skill_Bar/slot_6.gd" id="7_15ls2"]
 
 [node name="Skill_Bar" type="Node2D" unique_id=1100070285]
 script = ExtResource("1_rll07")
@@ -20,8 +15,8 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -60.0
-offset_bottom = -60.0
+offset_top = -46.0
+offset_bottom = -46.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -57,12 +52,12 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
-[node name="slot_2" type="Panel" parent="CanvasLayer/SkillBar/HBoxContainer" unique_id=13763858]
+[node name="slot_2" type="Panel" parent="CanvasLayer/SkillBar/HBoxContainer" unique_id=1272545869]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-script = ExtResource("3_0xiwy")
+script = ExtResource("2_82jcr")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SkillBar/HBoxContainer/slot_2" unique_id=821588346]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SkillBar/HBoxContainer/slot_2" unique_id=675912739]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 1
 anchors_preset = 8
@@ -70,20 +65,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
-[node name="slot_3" type="Panel" parent="CanvasLayer/SkillBar/HBoxContainer" unique_id=991503863]
+[node name="slot_3" type="Panel" parent="CanvasLayer/SkillBar/HBoxContainer" unique_id=89946386]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-script = ExtResource("4_tg4ms")
+script = ExtResource("2_82jcr")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SkillBar/HBoxContainer/slot_3" unique_id=289464976]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SkillBar/HBoxContainer/slot_3" unique_id=1805411856]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 1
 anchors_preset = 8
@@ -91,20 +82,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
-[node name="slot_4" type="Panel" parent="CanvasLayer/SkillBar/HBoxContainer" unique_id=834133557]
+[node name="slot_4" type="Panel" parent="CanvasLayer/SkillBar/HBoxContainer" unique_id=286858958]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-script = ExtResource("5_7fufn")
+script = ExtResource("2_82jcr")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SkillBar/HBoxContainer/slot_4" unique_id=1297964103]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SkillBar/HBoxContainer/slot_4" unique_id=859033625]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 1
 anchors_preset = 8
@@ -112,20 +99,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
-[node name="slot_5" type="Panel" parent="CanvasLayer/SkillBar/HBoxContainer" unique_id=386863644]
+[node name="slot_5" type="Panel" parent="CanvasLayer/SkillBar/HBoxContainer" unique_id=178279335]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-script = ExtResource("6_ou1q7")
+script = ExtResource("2_82jcr")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SkillBar/HBoxContainer/slot_5" unique_id=1971932065]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SkillBar/HBoxContainer/slot_5" unique_id=721832324]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 1
 anchors_preset = 8
@@ -133,20 +116,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
-[node name="slot_6" type="Panel" parent="CanvasLayer/SkillBar/HBoxContainer" unique_id=997492837]
+[node name="slot_6" type="Panel" parent="CanvasLayer/SkillBar/HBoxContainer" unique_id=1023329384]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-script = ExtResource("7_15ls2")
+script = ExtResource("2_82jcr")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SkillBar/HBoxContainer/slot_6" unique_id=1511071948]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SkillBar/HBoxContainer/slot_6" unique_id=430189273]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 1
 anchors_preset = 8
@@ -154,10 +133,6 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -24.0
-offset_right = 24.0
-offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1

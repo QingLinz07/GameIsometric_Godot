@@ -1,0 +1,922 @@
+[gd_scene format=3 uid="uid://dmcqcav6gv1e3"]
+
+[ext_resource type="Script" uid="uid://bqo4n7lmil6fe" path="res://Inventory/InventoryUI.cs" id="1_jgibs"]
+[ext_resource type="Texture2D" uid="uid://j2rubuyfilhm" path="res://Inventory/Asset/InvBG.png" id="2_s55ce"]
+[ext_resource type="Script" uid="uid://bnowa8mtc7mu1" path="res://Inventory/SlotUI.cs" id="2_v30as"]
+[ext_resource type="Script" uid="uid://bfi4s40wuayfa" path="res://Autoload/SoundManager/SoundManager.cs" id="3_ephh0"]
+[ext_resource type="FontFile" uid="uid://bhw6a3hajlbpj" path="res://Asset/Font/Noto_Serif_SC/NotoSerifSC-VariableFont_wght.ttf" id="3_t36q6"]
+[ext_resource type="Texture2D" uid="uid://bfbxfo07fukg8" path="res://Inventory/Asset/PopUp.png" id="5_ephh0"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="6_hohgl"]
+[ext_resource type="AudioStream" uid="uid://byfriudfe0tmw" path="res://Asset/Musics/UI/UIClickSound.mp3" id="8_hohgl"]
+
+[node name="InventoryUi" type="Control" unique_id=933625147 node_paths=PackedStringArray("gridContainer", "pageButtons", "autoSortButton", "itemInfoPanel", "infoIcon", "infoNameLabel", "infoPhanLoaiLabel", "infoDescLabel", "useButton", "dropButton", "splitButton", "closeInfoButton", "dropPopup", "popupTitleLabel", "dropQuantityInput", "confirmDropButton", "closePopupButton") groups=["InventoryUI"]]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_jgibs")
+gridContainer = NodePath("Background/GridContainer")
+pageButtons = [NodePath("Background/PaginationBar/PageBtn_1"), NodePath("Background/PaginationBar/PageBtn_2"), NodePath("Background/PaginationBar/PageBtn_3"), NodePath("Background/PaginationBar/PageBtn_4"), NodePath("Background/PaginationBar/PageBtn_5")]
+autoSortButton = NodePath("Background/AutoSortButton")
+itemInfoPanel = NodePath("ItemInfoPanel")
+infoIcon = NodePath("ItemInfoPanel/ItemIcon")
+infoNameLabel = NodePath("ItemInfoPanel/ItemNameLabel")
+infoPhanLoaiLabel = NodePath("ItemInfoPanel/ItemPhanLoai")
+infoDescLabel = NodePath("ItemInfoPanel/ItemDescLabel")
+useButton = NodePath("ItemInfoPanel/UseButton")
+dropButton = NodePath("ItemInfoPanel/DropButton")
+splitButton = NodePath("ItemInfoPanel/SplitButton")
+closeInfoButton = NodePath("ItemInfoPanel/CloseInfoButton")
+dropPopup = NodePath("DropQuantityPopup")
+popupTitleLabel = NodePath("DropQuantityPopup/Label")
+dropQuantityInput = NodePath("DropQuantityPopup/LineEdit")
+confirmDropButton = NodePath("DropQuantityPopup/ConfirmDropButton")
+closePopupButton = NodePath("DropQuantityPopup/CloseButton")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1178726675 node_paths=PackedStringArray("_buttons", "_audioPlayer")]
+layout_mode = 0
+offset_left = -397.0
+offset_top = -474.0
+offset_right = -3.0
+offset_bottom = -2.0
+texture = ExtResource("2_s55ce")
+expand_mode = 1
+script = ExtResource("3_ephh0")
+_buttons = [NodePath("PaginationBar/PageBtn_1"), NodePath("PaginationBar/PageBtn_2"), NodePath("PaginationBar/PageBtn_3"), NodePath("PaginationBar/PageBtn_4"), NodePath("PaginationBar/PageBtn_5"), NodePath("AutoSortButton"), NodePath("../ItemInfoPanel/UseButton"), NodePath("../ItemInfoPanel/DropButton"), NodePath("../ItemInfoPanel/CloseInfoButton"), NodePath("../ItemInfoPanel/SplitButton"), NodePath("../DropQuantityPopup/ConfirmDropButton"), NodePath("../DropQuantityPopup/CloseButton")]
+_audioPlayer = NodePath("../AudioStreamPlayer2D")
+
+[node name="GridContainer" type="GridContainer" parent="Background" unique_id=688925750]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 52.0
+offset_right = 372.0
+offset_bottom = 412.0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 5
+
+[node name="Slot_0" type="Button" parent="Background/GridContainer" unique_id=1293095431 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_0" unique_id=1716434435]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_0" unique_id=1114873978]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_1" type="Button" parent="Background/GridContainer" unique_id=1804897429 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_1" unique_id=1558232260]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_1" unique_id=385309262]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_2" type="Button" parent="Background/GridContainer" unique_id=1267840081 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_2" unique_id=1521303267]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_2" unique_id=825890561]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_3" type="Button" parent="Background/GridContainer" unique_id=949960432 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_3" unique_id=364760824]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_3" unique_id=533164302]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_4" type="Button" parent="Background/GridContainer" unique_id=481763777 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_4" unique_id=26747837]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_4" unique_id=225995189]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_5" type="Button" parent="Background/GridContainer" unique_id=259094355 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_5" unique_id=1906103264]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_5" unique_id=250365063]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_6" type="Button" parent="Background/GridContainer" unique_id=852792857 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_6" unique_id=1549643520]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_6" unique_id=1025785423]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_7" type="Button" parent="Background/GridContainer" unique_id=1698048082 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_7" unique_id=1254693203]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_7" unique_id=910396312]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_8" type="Button" parent="Background/GridContainer" unique_id=1992514341 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_8" unique_id=549666316]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_8" unique_id=1642002660]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_9" type="Button" parent="Background/GridContainer" unique_id=1279337294 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_9" unique_id=572945541]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_9" unique_id=2129255035]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_10" type="Button" parent="Background/GridContainer" unique_id=1726512620 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_10" unique_id=1105481586]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_10" unique_id=1523158405]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_11" type="Button" parent="Background/GridContainer" unique_id=1046766776 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_11" unique_id=875819402]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_11" unique_id=1901414924]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_12" type="Button" parent="Background/GridContainer" unique_id=1546313443 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_12" unique_id=1274729977]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_12" unique_id=1447688800]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_13" type="Button" parent="Background/GridContainer" unique_id=1646220541 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_13" unique_id=1870132371]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_13" unique_id=1910378533]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_14" type="Button" parent="Background/GridContainer" unique_id=1769764979 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_14" unique_id=1026417966]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_14" unique_id=1729183821]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_15" type="Button" parent="Background/GridContainer" unique_id=1802880833 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_15" unique_id=599779721]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_15" unique_id=1755329663]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_16" type="Button" parent="Background/GridContainer" unique_id=59085738 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_16" unique_id=1522438695]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_16" unique_id=1644864082]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_17" type="Button" parent="Background/GridContainer" unique_id=1179792731 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_17" unique_id=592620311]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_17" unique_id=1543566789]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_18" type="Button" parent="Background/GridContainer" unique_id=974563792 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_18" unique_id=839454114]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_18" unique_id=610311976]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_19" type="Button" parent="Background/GridContainer" unique_id=697589240 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_19" unique_id=1175645362]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_19" unique_id=1372088054]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_20" type="Button" parent="Background/GridContainer" unique_id=846447399 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_20" unique_id=1414983932]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_20" unique_id=1856470495]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_21" type="Button" parent="Background/GridContainer" unique_id=173612050 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_21" unique_id=494944927]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_21" unique_id=1672355487]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_22" type="Button" parent="Background/GridContainer" unique_id=89758276 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_22" unique_id=816153801]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_22" unique_id=1386919197]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_23" type="Button" parent="Background/GridContainer" unique_id=1817861396 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_23" unique_id=1375817617]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_23" unique_id=959581049]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="Slot_24" type="Button" parent="Background/GridContainer" unique_id=260336103 node_paths=PackedStringArray("iconTexture", "quantityLabel")]
+custom_minimum_size = Vector2(54, 54)
+layout_mode = 2
+offset_transform_enabled = true
+script = ExtResource("2_v30as")
+iconTexture = NodePath("TextureRect")
+quantityLabel = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="Background/GridContainer/Slot_24" unique_id=1929439478]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 54.0
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/GridContainer/Slot_24" unique_id=605226903]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 51.0
+offset_bottom = 13.958336
+theme_override_font_sizes/font_size = 10
+text = "999"
+horizontal_alignment = 1
+
+[node name="PaginationBar" type="Control" parent="Background" unique_id=1008115293]
+anchors_preset = 0
+offset_left = 61.0
+offset_top = 400.0
+offset_right = 385.0
+offset_bottom = 464.0
+
+[node name="PageBtn_1" type="Button" parent="Background/PaginationBar" unique_id=419307868]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 25.0
+offset_right = 24.0
+offset_bottom = 56.0
+text = "1"
+
+[node name="PageBtn_2" type="Button" parent="Background/PaginationBar" unique_id=953389828]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 25.0
+offset_right = 59.0
+offset_bottom = 56.0
+text = "2"
+
+[node name="PageBtn_3" type="Button" parent="Background/PaginationBar" unique_id=764900147]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 25.0
+offset_right = 96.0
+offset_bottom = 56.0
+text = "3"
+
+[node name="PageBtn_4" type="Button" parent="Background/PaginationBar" unique_id=543957685]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 25.0
+offset_right = 132.0
+offset_bottom = 56.0
+text = "4"
+
+[node name="PageBtn_5" type="Button" parent="Background/PaginationBar" unique_id=1177167065]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 25.0
+offset_right = 170.0
+offset_bottom = 56.0
+text = "5
+"
+
+[node name="AutoSortButton" type="Button" parent="Background" unique_id=1242401031]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 424.0
+offset_right = 315.0
+offset_bottom = 456.0
+theme_override_fonts/font = ExtResource("3_t36q6")
+text = "Sắp Xếp"
+
+[node name="Label" type="Label" parent="Background" unique_id=1979067915]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 5.0
+offset_right = 32.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_t36q6")
+theme_override_font_sizes/font_size = 20
+text = "Túi Trữ Vật"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemInfoPanel" type="TextureRect" parent="." unique_id=838172579]
+layout_mode = 0
+offset_left = -732.0
+offset_top = -479.0
+offset_right = -391.0
+offset_bottom = -84.0
+texture = ExtResource("5_ephh0")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ItemInfoPanel" unique_id=1648440437]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_top = 13.0
+offset_right = 50.5
+offset_bottom = 43.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_t36q6")
+theme_override_font_sizes/font_size = 20
+text = "Thông Tin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ItemInfoPanel" unique_id=689482354]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 153.0
+offset_right = 128.0
+offset_bottom = 174.0
+theme_override_fonts/font = ExtResource("3_t36q6")
+theme_override_font_sizes/font_size = 14
+text = "Tên vật phẩm:"
+
+[node name="Label3" type="Label" parent="ItemInfoPanel" unique_id=798494719]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 181.0
+offset_right = 105.0
+offset_bottom = 204.0
+theme_override_fonts/font = ExtResource("3_t36q6")
+theme_override_font_sizes/font_size = 14
+text = "Phân loại:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="ItemInfoPanel" unique_id=28189247]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 209.0
+offset_right = 78.0
+offset_bottom = 230.0
+theme_override_fonts/font = ExtResource("3_t36q6")
+theme_override_font_sizes/font_size = 14
+text = "Mô tả:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="ItemInfoPanel" unique_id=189802232]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.5
+offset_top = 81.0
+offset_right = 33.5
+offset_bottom = 145.0
+grow_horizontal = 2
+texture = ExtResource("6_hohgl")
+expand_mode = 1
+
+[node name="ItemNameLabel" type="RichTextLabel" parent="ItemInfoPanel" unique_id=220910828]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 154.0
+offset_right = 321.0
+offset_bottom = 175.0
+theme_override_fonts/normal_font = ExtResource("3_t36q6")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "Chim giả"
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="ItemPhanLoai" type="RichTextLabel" parent="ItemInfoPanel" unique_id=734072361]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 182.0
+offset_right = 318.0
+offset_bottom = 203.0
+theme_override_fonts/normal_font = ExtResource("3_t36q6")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "Thượng Phẩm"
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="ItemDescLabel" type="RichTextLabel" parent="ItemInfoPanel" unique_id=559633909]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 209.0
+offset_right = 297.0
+offset_bottom = 305.0
+theme_override_fonts/normal_font = ExtResource("3_t36q6")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "con cò bay tới bay liu bay qua bay qua bay lại mất tiêu con cò "
+scroll_active = false
+
+[node name="UseButton" type="Button" parent="ItemInfoPanel" unique_id=624456266]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 333.0
+offset_right = 134.0
+offset_bottom = 364.0
+theme_override_fonts/font = ExtResource("3_t36q6")
+text = "Sử Dụng"
+
+[node name="DropButton" type="Button" parent="ItemInfoPanel" unique_id=1296868321]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 333.0
+offset_right = 178.0
+offset_bottom = 364.0
+theme_override_fonts/font = ExtResource("3_t36q6")
+text = "Vứt"
+
+[node name="CloseInfoButton" type="Button" parent="ItemInfoPanel" unique_id=1968702629]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 333.0
+offset_right = 282.0
+offset_bottom = 364.0
+theme_override_fonts/font = ExtResource("3_t36q6")
+text = "Đóng"
+
+[node name="SplitButton" type="Button" parent="ItemInfoPanel" unique_id=1599732690]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 333.0
+offset_right = 228.0
+offset_bottom = 364.0
+theme_override_fonts/font = ExtResource("3_t36q6")
+text = "Tách"
+
+[node name="DropQuantityPopup" type="TextureRect" parent="." unique_id=547810018]
+layout_mode = 0
+offset_left = -969.0
+offset_top = -301.0
+offset_right = -726.0
+offset_bottom = -89.0
+texture = ExtResource("5_ephh0")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="DropQuantityPopup" unique_id=1495604731]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.5
+offset_top = -42.999985
+offset_right = 59.5
+offset_bottom = -23.45832
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_t36q6")
+theme_override_font_sizes/font_size = 14
+text = "Nhập số lượng "
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="DropQuantityPopup" unique_id=999963607]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 97.0
+offset_right = 195.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 10
+placeholder_text = "Nhập số: "
+
+[node name="ConfirmDropButton" type="Button" parent="DropQuantityPopup" unique_id=1892989187]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.5
+offset_top = 18.0
+offset_right = 39.5
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_t36q6")
+theme_override_font_sizes/font_size = 14
+text = "xác nhận"
+
+[node name="CloseButton" type="Button" parent="DropQuantityPopup" unique_id=2130030286]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 169.0
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("3_t36q6")
+theme_override_font_sizes/font_size = 14
+text = "Đóng"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1739042177]
+stream = ExtResource("8_hohgl")

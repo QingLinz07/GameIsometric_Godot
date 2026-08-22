@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BinhMauNho" format=3 uid="uid://dlq1smxj7eeuv"]
+
+[ext_resource type="Texture2D" uid="uid://cy4jwgwnv1gx3" path="res://Inventory/Item/Item_Tri_Lieu/BinhMauNho/BinhMauNho.png" id="1_iasxo"]
+[ext_resource type="Script" uid="uid://dcheg7cu4ukl2" path="res://Inventory/Item/Item_Tri_Lieu/BinhMauNho/BinhMauNho.cs" id="1_mbf2m"]
+
+[resource]
+script = ExtResource("1_mbf2m")
+ItemID = "2"
+ItemName = "[color=green]Bình Máu Nhỏ[/color]"
+Icon = ExtResource("1_iasxo")
+Description = "Khi sử dụng sẽ hồi lại 20 máu"
+ItemPhanLoai = "[color=#FF2222]Phàm Phẩm[/color]"
+metadata/_custom_type_script = "uid://dcheg7cu4ukl2"

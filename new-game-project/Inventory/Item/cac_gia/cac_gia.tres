@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b5qufcvb8v384"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_jtagh"]
+[ext_resource type="Script" uid="uid://cdsqhfak1pmju" path="res://Inventory/ItemData.cs" id="1_vjjoo"]
+
+[resource]
+script = ExtResource("1_vjjoo")
+ItemID = "1"
+ItemName = "CặcGia"
+Icon = ExtResource("1_jtagh")
+Description = "con cu xinh xinh"
+ItemPhanLoai = "Thượng Phẩm"
+metadata/_custom_type_script = "uid://cdsqhfak1pmju"
