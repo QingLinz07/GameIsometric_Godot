@@ -15,7 +15,7 @@ public partial class MountUI : Control
 	[Export] private Button summonButton;
 	[Export] private Button closePopupButton;
 
-	[Export] private Key toggleKey = Key.M; // Phím tắt để mở/đóng giao diện (có thể đổi trong Inspector)
+	[Export] private Key toggleKey = Key.M; // Phím tắt mở/đóng UI
 
 	private MountData selectedMountData;
 
@@ -25,13 +25,13 @@ public partial class MountUI : Control
 		if (popupPanel != null) popupPanel.Hide();
 
 		if (closePopupButton != null)
-			closePopupButton.Pressed += () => popupPanel.Hide();
+			closePopupButton.Pressed += ClosePopup;
 
 		if (summonButton != null)
 			summonButton.Pressed += OnSummonButtonPressed;
 	}
 
-	// Bắt sự kiện bàn phím toàn cục để mở/đóng UI bằng phím M
+	// Bắt sự kiện bàn phím mở/đóng UI bằng phím M
 	public override void _Input(InputEvent @event)
 	{
 		if (@event is InputEventKey keyEvent && keyEvent.Pressed && !keyEvent.Echo)
@@ -48,7 +48,7 @@ public partial class MountUI : Control
 		if (Visible)
 		{
 			Hide();
-			if (popupPanel != null) popupPanel.Hide(); // Đóng luôn popup nếu đang mở
+			ClosePopup(); // Đóng popup và giải phóng bộ nhớ Icon khi ẩn UI
 		}
 		else
 		{
@@ -76,7 +76,7 @@ public partial class MountUI : Control
 			bool isOwned = ownedList.Contains(mountData.MountId);
 			slot.Setup(mountData, isOwned);
 
-			// Khi click vào ô vuông slot -> hiện Popup thông tin chi tiết
+			// Khi click vào ô slot -> hiện Popup chi tiết
 			slot.OnSlotClicked += (clickedData) =>
 			{
 				OpenPopup(clickedData, isOwned);
@@ -90,7 +90,20 @@ public partial class MountUI : Control
 		if (popupPanel == null) return;
 
 		popupPanel.Show();
-		if (popupIcon != null) popupIcon.Texture = mountData.Icon;
+
+		// 1. Dòng 93 đã sửa: Lazy Loading Icon từ IconPath
+		if (popupIcon != null)
+		{
+			if (!string.IsNullOrEmpty(mountData.IconPath))
+			{
+				popupIcon.Texture = GD.Load<Texture2D>(mountData.IconPath);
+			}
+			else
+			{
+				popupIcon.Texture = null;
+			}
+		}
+
 		if (popupName != null) popupName.Text = mountData.MountName;
 		if (popupCategory != null) popupCategory.Text = $"{mountData.Category}";
 		if (popupDesc != null) popupDesc.Text = mountData.Description;
@@ -119,6 +132,13 @@ public partial class MountUI : Control
 		}
 	}
 
+	private void ClosePopup()
+	{
+		if (popupPanel != null) popupPanel.Hide();
+		// Giải phóng tham chiếu Texture để trả VRAM khi đóng popup
+		if (popupIcon != null) popupIcon.Texture = null;
+	}
+
 	private void OnSummonButtonPressed()
 	{
 		if (selectedMountData == null) return;
@@ -127,9 +147,9 @@ public partial class MountUI : Control
 		var data = (Godot.Collections.Dictionary)gm.Get("current_player_data");
 
 		data["equipped_mount"] = selectedMountData.MountId;
-		gm.Call("save_current_player"); // Lưu thẳng vào file JSON
+		gm.Call("save_current_player"); // Lưu vào JSON
 
-		OpenPopup(selectedMountData, true); // Cập nhật lại nút thành "Đã triệu hồi"
+		OpenPopup(selectedMountData, true); // Cập nhật lại trạng thái nút
 		RefreshGrid();
 	}
 }

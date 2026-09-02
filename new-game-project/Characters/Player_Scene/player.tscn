@@ -1,69 +1,132 @@
 [gd_scene format=3 uid="uid://diosbw5vuhhfp"]
 
 [ext_resource type="Script" uid="uid://bbhqrplqt6je3" path="res://Characters/Player_Scene/player.gd" id="1_sphr4"]
+[ext_resource type="Texture2D" uid="uid://ysxvoed1rrdm" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down (1).png" id="2_0c42s"]
 [ext_resource type="Texture2D" uid="uid://cf8oucl7roohv" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_0.png" id="2_wdqmn"]
+[ext_resource type="Texture2D" uid="uid://chxkqstxb20pm" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down (2).png" id="3_4hqkc"]
 [ext_resource type="Texture2D" uid="uid://fwlhba1vfbk5" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_1.png" id="3_4l77d"]
 [ext_resource type="Texture2D" uid="uid://c60h5e4p2wfap" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_2.png" id="4_bcdvr"]
+[ext_resource type="Texture2D" uid="uid://cngb8ke4l22nf" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down (3).png" id="4_rtqjf"]
+[ext_resource type="Texture2D" uid="uid://ssl7obt6570u" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down (4).png" id="5_vdpwl"]
 [ext_resource type="Texture2D" uid="uid://oisb6j6j0q4v" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_3.png" id="5_wkla0"]
+[ext_resource type="Texture2D" uid="uid://r6d3npywvwho" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down (5).png" id="6_13lj5"]
 [ext_resource type="Texture2D" uid="uid://dnojpdfyj45kx" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_4.png" id="6_ly2mk"]
 [ext_resource type="Texture2D" uid="uid://c8nvydru0rvx8" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_5.png" id="7_2qjon"]
+[ext_resource type="Texture2D" uid="uid://dj5p1cle5v5ml" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down (6).png" id="7_b44a2"]
 [ext_resource type="Texture2D" uid="uid://cyywvbe4h3bar" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_6.png" id="8_126pb"]
+[ext_resource type="Texture2D" uid="uid://nhd2q623x3g0" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down (7).png" id="8_a4nds"]
+[ext_resource type="Texture2D" uid="uid://bnbwt0udmjus7" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Left (1).png" id="9_m57ju"]
 [ext_resource type="Texture2D" uid="uid://cjbjyw2mmatgl" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_7.png" id="9_pq4pl"]
+[ext_resource type="Texture2D" uid="uid://cc7s5hsun3eok" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Left (2).png" id="10_5db32"]
 [ext_resource type="Texture2D" uid="uid://dpd8h6dqpowa" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_8.png" id="10_vkigg"]
+[ext_resource type="Texture2D" uid="uid://b4cgukgqrblhq" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Left (3).png" id="11_lp6r7"]
 [ext_resource type="Texture2D" uid="uid://cdh5v2pjwxo7q" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_9.png" id="11_rp7t1"]
+[ext_resource type="Texture2D" uid="uid://e5traa5qlnn0" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Left (4).png" id="12_8r6h5"]
 [ext_resource type="Texture2D" uid="uid://bftcqm3opahq8" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_10.png" id="12_xdl81"]
+[ext_resource type="Texture2D" uid="uid://b6t301xg446cd" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Left (5).png" id="13_78uyr"]
 [ext_resource type="Texture2D" uid="uid://bsgcfcxjdhvel" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_11.png" id="13_qskrv"]
+[ext_resource type="Texture2D" uid="uid://c6d04lg46t1ia" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Left (6).png" id="14_7w0og"]
 [ext_resource type="Texture2D" uid="uid://cy6sabnyy3x20" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_12.png" id="14_bd4vi"]
 [ext_resource type="Texture2D" uid="uid://chebxe16alov2" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_13.png" id="15_cmb5p"]
+[ext_resource type="Texture2D" uid="uid://3eptfocgamxu" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Left (7).png" id="15_jvkjs"]
 [ext_resource type="Texture2D" uid="uid://ct4qtkt6fsk0h" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_14.png" id="16_4vo3g"]
+[ext_resource type="Texture2D" uid="uid://bskcuq6hw3jif" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Left (8).png" id="16_mui62"]
 [ext_resource type="Texture2D" uid="uid://cne02jivmytrf" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_15.png" id="17_4g8p2"]
+[ext_resource type="Texture2D" uid="uid://dkg3g1ph2w2di" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Right (1).png" id="17_75wa8"]
 [ext_resource type="Texture2D" uid="uid://hh4ljn65srnp" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_41 (1).png" id="18_cp4ir"]
+[ext_resource type="Texture2D" uid="uid://bm0mi1m28nhop" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Right (2).png" id="18_go2n6"]
+[ext_resource type="Texture2D" uid="uid://b6yfcuxboimps" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Right (3).png" id="19_871dl"]
 [ext_resource type="Texture2D" uid="uid://cb5wv0hspmh5x" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_41 (2).png" id="19_ortvs"]
+[ext_resource type="Texture2D" uid="uid://bjpmuux4cqujf" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Right (4).png" id="20_d2420"]
 [ext_resource type="Texture2D" uid="uid://ou4nswskbuji" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_41 (3).png" id="20_lsm0k"]
 [ext_resource type="Texture2D" uid="uid://0qin2kvvb80g" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_41 (4).png" id="21_3h3g0"]
+[ext_resource type="Texture2D" uid="uid://clv83ps1qgioo" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Right (5).png" id="21_ysrd8"]
+[ext_resource type="Texture2D" uid="uid://bc0p0pyyuo3oy" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Right (6).png" id="22_6dv6r"]
 [ext_resource type="Texture2D" uid="uid://fda3vx7rjmt7" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_41 (5).png" id="22_ihtg4"]
 [ext_resource type="Texture2D" uid="uid://cjmno00n0sbe7" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_41 (6).png" id="23_ayxvx"]
+[ext_resource type="Texture2D" uid="uid://ccdtspkc4oc0p" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Right (7).png" id="23_l2654"]
+[ext_resource type="Texture2D" uid="uid://b025i1pomiirl" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Down_Right (8).png" id="24_nsfue"]
 [ext_resource type="Texture2D" uid="uid://1tatljjbw5vw" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_41 (7).png" id="24_y8coa"]
+[ext_resource type="Texture2D" uid="uid://bqjhgfxvao1v1" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Left (1).png" id="25_1mxce"]
 [ext_resource type="Texture2D" uid="uid://bj5psue2prnt4" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_16.png" id="25_51haa"]
 [ext_resource type="Texture2D" uid="uid://blmur6bn0y3h4" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_17.png" id="26_3arkb"]
+[ext_resource type="Texture2D" uid="uid://cxp38hyawqryo" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Left (2).png" id="26_6aydy"]
+[ext_resource type="Texture2D" uid="uid://1p0nd5n256he" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Left (3).png" id="27_s0iil"]
 [ext_resource type="Texture2D" uid="uid://cukd1b30wje8b" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_18.png" id="27_u80oq"]
+[ext_resource type="Texture2D" uid="uid://d205iegheopqa" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Left (4).png" id="28_dvf02"]
 [ext_resource type="Texture2D" uid="uid://bp7tb33e85cav" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_19.png" id="28_v0ooe"]
 [ext_resource type="Texture2D" uid="uid://5urofprnw2jq" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_20.png" id="29_0q7g1"]
+[ext_resource type="Texture2D" uid="uid://cgcxrliellvdr" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Left (5).png" id="29_4exoo"]
+[ext_resource type="Texture2D" uid="uid://vim1s2ewxwtp" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Left (6).png" id="30_sjt4c"]
 [ext_resource type="Texture2D" uid="uid://dt43oa55ollpa" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_21.png" id="30_x0rqq"]
+[ext_resource type="Texture2D" uid="uid://cov70vr0v1prg" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Left (7).png" id="31_84xq5"]
 [ext_resource type="Texture2D" uid="uid://bnh5p2jbusga1" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_22.png" id="31_wbpl7"]
 [ext_resource type="Texture2D" uid="uid://ci8knxd20sbc8" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_23.png" id="32_7glh1"]
+[ext_resource type="Texture2D" uid="uid://chnxpwnnsgkph" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Left (8).png" id="32_p7rbx"]
+[ext_resource type="Texture2D" uid="uid://ch45ljd1kvkme" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Right (1).png" id="33_gg2te"]
 [ext_resource type="Texture2D" uid="uid://dtaqvym7uxgt5" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_40 (1).png" id="33_gpapn"]
 [ext_resource type="Texture2D" uid="uid://dsdvjc4wa4d3x" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_40 (2).png" id="34_anuw7"]
+[ext_resource type="Texture2D" uid="uid://dpthytko5skoq" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Right (2).png" id="34_er3ms"]
+[ext_resource type="Texture2D" uid="uid://be16ju50s7io7" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Right (3).png" id="35_lyu5q"]
 [ext_resource type="Texture2D" uid="uid://bpnlysludcaf" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_40 (3).png" id="35_m31fv"]
+[ext_resource type="Texture2D" uid="uid://clde2c0vg7bm7" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Right (4).png" id="36_kcrhm"]
 [ext_resource type="Texture2D" uid="uid://dwgdbcyur6td5" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_40 (4).png" id="36_l2r5y"]
 [ext_resource type="Texture2D" uid="uid://d3bp8grx2oh7l" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_40 (5).png" id="37_84vg2"]
+[ext_resource type="Texture2D" uid="uid://goqlg6v03bdd" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Right (5).png" id="37_i45vi"]
+[ext_resource type="Texture2D" uid="uid://dbt137i04xfpx" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Right (6).png" id="38_5l3qk"]
 [ext_resource type="Texture2D" uid="uid://dotjdm5yk2bcg" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_40 (6).png" id="38_wbdxh"]
+[ext_resource type="Texture2D" uid="uid://brnnkhxewwwws" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Right (7).png" id="39_58sj3"]
 [ext_resource type="Texture2D" uid="uid://nguy3yt4nl7q" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_40 (7).png" id="39_iggoc"]
+[ext_resource type="Texture2D" uid="uid://badd4knoh0ckd" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Right (8).png" id="40_230yl"]
 [ext_resource type="Texture2D" uid="uid://d0vvt1vg4g46r" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_32.png" id="40_f06g1"]
+[ext_resource type="Texture2D" uid="uid://c3ifd0ht4ufv8" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up (1).png" id="41_55aid"]
 [ext_resource type="Texture2D" uid="uid://bka3ab0gdevto" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_33.png" id="41_nrfth"]
+[ext_resource type="Texture2D" uid="uid://cinnqmgr70jll" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up (2).png" id="42_o3ky7"]
 [ext_resource type="Texture2D" uid="uid://brmhkadvm3kys" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_34.png" id="42_qqvnk"]
 [ext_resource type="Texture2D" uid="uid://bdnwe8wvo0vpo" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_35.png" id="43_tyrpq"]
+[ext_resource type="Texture2D" uid="uid://cglrdhroacf2u" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up (3).png" id="43_up151"]
 [ext_resource type="Texture2D" uid="uid://tatrcul2fqw8" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_36.png" id="44_1fjtc"]
+[ext_resource type="Texture2D" uid="uid://dif1e013gqrsf" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up (4).png" id="44_a8b6m"]
+[ext_resource type="Texture2D" uid="uid://c8lchgw33yavj" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up (5).png" id="45_2x05e"]
 [ext_resource type="Texture2D" uid="uid://du00pst7mkfb" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_37.png" id="45_6jntg"]
 [ext_resource type="Texture2D" uid="uid://bqpwxblk61dua" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_38.png" id="46_1si8a"]
+[ext_resource type="Texture2D" uid="uid://b6cdkbi1hlhli" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up (6).png" id="46_8uyw5"]
+[ext_resource type="Texture2D" uid="uid://cphhdg72bv0hy" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up (7).png" id="47_6cvn5"]
 [ext_resource type="Texture2D" uid="uid://bmn85rbg2e5of" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_39.png" id="47_dnqda"]
 [ext_resource type="Texture2D" uid="uid://dgpbgtgecp0vs" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_24.png" id="48_1wfth"]
+[ext_resource type="Texture2D" uid="uid://byqc057mlguyl" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up (8).png" id="48_gg3a0"]
+[ext_resource type="Texture2D" uid="uid://c3j373b5imwe1" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Left (1).png" id="49_6n861"]
 [ext_resource type="Texture2D" uid="uid://cxymwwby52762" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_25.png" id="49_ag8aw"]
+[ext_resource type="Texture2D" uid="uid://bo7g62buy4soq" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Left (2).png" id="50_0peuo"]
 [ext_resource type="Texture2D" uid="uid://bome1onbux1cf" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_26.png" id="50_vmkgy"]
 [ext_resource type="Texture2D" uid="uid://de3pgii4eylkf" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_27.png" id="51_i3qag"]
+[ext_resource type="Texture2D" uid="uid://drjmbkgtmf6qu" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Left (3).png" id="51_npeai"]
+[ext_resource type="Texture2D" uid="uid://3olhooscdftp" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Left (4).png" id="52_bw0xk"]
 [ext_resource type="Texture2D" uid="uid://ccxxpn1ds0t21" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_28.png" id="52_tebs7"]
+[ext_resource type="Texture2D" uid="uid://b2b608fhww6tq" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Left (5).png" id="53_a1m85"]
 [ext_resource type="Texture2D" uid="uid://61pdvjsv7sr" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_29.png" id="53_vepuv"]
+[ext_resource type="Texture2D" uid="uid://bpk30d3yo8jwx" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Left (6).png" id="54_h6lig"]
 [ext_resource type="Texture2D" uid="uid://bml5ixno7i3af" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_30.png" id="54_vfxsm"]
+[ext_resource type="Texture2D" uid="uid://ee25v4x5p2eu" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Left (7).png" id="55_cpw2a"]
 [ext_resource type="Texture2D" uid="uid://crjaq8fdfo7xi" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_31.png" id="55_ydcp5"]
+[ext_resource type="Texture2D" uid="uid://bxmw4fmv3tfjw" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Left (8).png" id="56_vbq3t"]
 [ext_resource type="Texture2D" uid="uid://dpub1d75s5fwm" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_42 (1).png" id="56_ysy1c"]
+[ext_resource type="Texture2D" uid="uid://bfvk4imfyk472" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Right (1).png" id="57_4ptl0"]
 [ext_resource type="Texture2D" uid="uid://bi815ai70m47x" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_42 (2).png" id="57_varc4"]
 [ext_resource type="Texture2D" uid="uid://c71xihsyph8i8" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_42 (3).png" id="58_ap6qn"]
+[ext_resource type="Texture2D" uid="uid://duhg02cycqamx" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Right (2).png" id="58_ht8ed"]
+[ext_resource type="Texture2D" uid="uid://dhkp57uh47qir" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Right (3).png" id="59_afjdp"]
 [ext_resource type="Texture2D" uid="uid://cj8s4qcr6w4i4" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_42 (4).png" id="59_x1gh0"]
+[ext_resource type="Texture2D" uid="uid://d3wwv4mo43hsv" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Right (4).png" id="60_geuxd"]
 [ext_resource type="Texture2D" uid="uid://slgohgsfe7bi" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_42 (5).png" id="60_usc85"]
+[ext_resource type="Texture2D" uid="uid://cb2p4sl4ks4lh" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Right (5).png" id="61_7phdh"]
 [ext_resource type="Texture2D" uid="uid://dwhvkc3b76x6w" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_42 (6).png" id="61_liv1y"]
 [ext_resource type="Texture2D" uid="uid://d1owhoswtxb6a" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_42 (7).png" id="62_0mkfg"]
+[ext_resource type="Texture2D" uid="uid://cu32iwlupqce7" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Right (6).png" id="62_kdbgb"]
+[ext_resource type="Texture2D" uid="uid://bmtapbyndxtpt" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Right (7).png" id="63_2rf3i"]
 [ext_resource type="Texture2D" uid="uid://cmv52gnt6qla7" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_42 (8).png" id="63_6gnus"]
 [ext_resource type="Texture2D" uid="uid://dlob2dmlqgrps" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_43 (1).png" id="64_06323"]
+[ext_resource type="Texture2D" uid="uid://qhfs1wlmr1s5" path="res://Characters/Asset/Skin_Mac_Dinh/Cuoi_Ngua/Ride_Up_Right (8).png" id="64_g3me0"]
 [ext_resource type="Texture2D" uid="uid://syu3tapnkwia" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_43 (2).png" id="65_0c42s"]
 [ext_resource type="Texture2D" uid="uid://cpxok6lfdtble" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_43 (3).png" id="66_4hqkc"]
 [ext_resource type="Texture2D" uid="uid://3e2rjyad67n4" path="res://Characters/Asset/Skin_Mac_Dinh/Trang_Thai_Di_Chuyen/frame_43 (4).png" id="67_rtqjf"]
@@ -149,6 +212,235 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ncqna"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0c42s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4hqkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rtqjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vdpwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_13lj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_b44a2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a4nds")
+}],
+"loop": 1,
+"name": &"Ride_Down",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_m57ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5db32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lp6r7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8r6h5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_78uyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7w0og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jvkjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mui62")
+}],
+"loop": 1,
+"name": &"Ride_Down_Left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_75wa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_go2n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_871dl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_d2420")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ysrd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6dv6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_l2654")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_nsfue")
+}],
+"loop": 1,
+"name": &"Ride_Down_Right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_1mxce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6aydy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_s0iil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_dvf02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_4exoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_sjt4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_84xq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_p7rbx")
+}],
+"loop": 1,
+"name": &"Ride_Left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_gg2te")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_er3ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_lyu5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_kcrhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_i45vi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_5l3qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_58sj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_230yl")
+}],
+"loop": 1,
+"name": &"Ride_Right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_55aid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_o3ky7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_up151")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_a8b6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_2x05e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_8uyw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_6cvn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_gg3a0")
+}],
+"loop": 1,
+"name": &"Ride_Up",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_6n861")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_0peuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_npeai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_bw0xk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_a1m85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_h6lig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_cpw2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_vbq3t")
+}],
+"loop": 1,
+"name": &"Ride_Up_Left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_4ptl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_ht8ed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_afjdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_geuxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_7phdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_kdbgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_2rf3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_g3me0")
+}],
+"loop": 1,
+"name": &"Ride_Up_Right",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_wdqmn")
@@ -671,8 +963,8 @@ script = ExtResource("1_sphr4")
 position = Vector2(0, -0.6666665)
 scale = Vector2(0.33574218, 0.42421874)
 sprite_frames = SubResource("SpriteFrames_ncqna")
-animation = &"Walk_Up_Right"
-frame_progress = 0.23814064
+animation = &"Ride_Down_Right"
+frame_progress = 0.17078397
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=378155614 groups=["Player"]]
 position = Vector2(1.3333334, 26.666666)

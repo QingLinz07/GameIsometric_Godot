@@ -1,5 +1,6 @@
 using Godot;
 using System.Collections.Generic;
+using System;
 
 public partial class PlayerMovement : Node
 {
@@ -265,17 +266,23 @@ public partial class PlayerMovement : Node
 
         if (!isRiding)
         {
-            var mountDb = body.GetNodeOrNull<Node>("/root/MountDatabaseManager");
+            // 1. Lấy Manager
+            var mountDb = body.GetNodeOrNull<MountDatabaseManager>("/root/MountDatabaseManager");
             if (mountDb == null) return;
 
-            var mountDataObj = mountDb.Call("GetMountData", equippedId);
-            if (mountDataObj.VariantType == Variant.Type.Nil) return;
+            // 2. Lấy dữ liệu config
+            MountData mountData = mountDb.GetMountData(equippedId);
+            if (mountData == null || string.IsNullOrEmpty(mountData.MountScenePath)) return;
 
-            MountData mountData = mountDataObj.As<MountData>();
-            if (mountData == null || mountData.MountScene == null) return;
+            // 3. LAZY LOADING: Bây giờ mới nạp Scene + PNG vào RAM
+            var packedScene = GD.Load<PackedScene>(mountData.MountScenePath);
+            if (packedScene == null)
+            {
+                GD.PrintErr($"[PlayerMovement] Không thể load scene từ đường dẫn: {mountData.MountScenePath}");
+                return;
+            }
 
-            Node mountScenePacked = mountData.MountScene.Instantiate();
-            BaseMount mountNode = mountScenePacked as BaseMount;
+            BaseMount mountNode = packedScene.Instantiate() as BaseMount;
             if (mountNode != null)
             {
                 activeMount = mountNode;
@@ -292,19 +299,16 @@ public partial class PlayerMovement : Node
                 float bonusSpeed = mountNode.SpeedBonus;
                 speed = originalSpeed + bonusSpeed;
 
-                GD.Print($"[PlayerMovement] Tốc độ gốc: {originalSpeed}, Bonus từ thú: {bonusSpeed}, Tổng tốc độ: {speed}");
+                GD.Print($"[PlayerMovement] Tốc độ gốc: {originalSpeed}, Bonus: {bonusSpeed}, Tổng: {speed}");
 
                 isRiding = true;
                 UpdateZIndexByDirection(lastDirectionName);
-                GD.Print("[PlayerMovement] Đã lên ngựa với cấu hình Z-Index tùy chỉnh!");
-            }
-            else
-            {
-                mountScenePacked.QueueFree();
+                GD.Print("[PlayerMovement] Đã lên ngựa thành công!");
             }
         }
         else
         {
+            // 4. UNLOADING TRIỆT ĐỂ: Xuống ngựa & Ép xả RAM ngay lập tức
             if (activeMount != null)
             {
                 if (sprite != null) sprite.ZIndex = 0;
@@ -312,14 +316,57 @@ public partial class PlayerMovement : Node
                 Vector2 exitPos = activeMount.GlobalPosition + new Vector2(40, 0);
                 body.GlobalPosition = exitPos;
 
+                // BƯỚC A: Ngắt toàn bộ tham chiếu Sprite/Animation của con thú
+                UnloadMountTextures(activeMount);
+
+                // BƯỚC B: Hủy Node khỏi Scene Tree
                 activeMount.QueueFree();
                 activeMount = null;
+
+                // BƯỚC C: Ép C# và Godot thu gom rác + giải phóng VRAM ngay lập tức
+                UnloadUnusedResourcesExplicitly();
             }
 
             speed = originalSpeed;
             isRiding = false;
             PlayStandAnimation();
-            GD.Print("[PlayerMovement] Đã xuống ngựa!");
+            GD.Print("[PlayerMovement] Đã xuống ngựa và giải phóng RAM/VRAM lập tức!");
         }
+    }
+
+    // --- HÀM BỔ TRỢ 1: Xóa triệt để các tham chiếu Texture/Animation ---
+    private void UnloadMountTextures(Node mountNode)
+    {
+        if (mountNode == null) return;
+
+        // Tìm và ngắt AnimatedSprite2D
+        foreach (Node child in mountNode.FindChildren("*", "AnimatedSprite2D", recursive: true, owned: false))
+        {
+            if (child is AnimatedSprite2D animSprite)
+            {
+                animSprite.Stop();
+                animSprite.SpriteFrames = null; // Hủy liên kết bộ ảnh animation khỏi node
+            }
+        }
+
+        // Tìm và ngắt Sprite2D
+        foreach (Node child in mountNode.FindChildren("*", "Sprite2D", recursive: true, owned: false))
+        {
+            if (child is Sprite2D sprite2D)
+            {
+                sprite2D.Texture = null; // Hủy liên kết ảnh tĩnh khỏi node
+            }
+        }
+    }
+
+    // --- HÀM BỔ TRỢ 2: Lệnh ép C# và Godot xả RAM ngay lập tức ---
+    private void UnloadUnusedResourcesExplicitly()
+    {
+        // 1. Ép C# Garbage Collector dọn dẹp các wrapper object
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+
+        // 2. Đẩy các lệnh xử lý đồ họa còn dư thừa để Godot giải phóng VRAM ngay frame này
+        RenderingServer.FreeRid(new Rid());
     }
 }

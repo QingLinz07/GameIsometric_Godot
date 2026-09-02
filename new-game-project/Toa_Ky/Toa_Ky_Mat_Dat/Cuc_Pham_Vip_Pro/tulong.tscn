@@ -426,7 +426,7 @@ SpeedBonus = 200.0
 Z_Down = -1
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=658680441]
-position = Vector2(-2, 74)
-scale = Vector2(0.5950846, 0.5865429)
+position = Vector2(-1, 78)
+scale = Vector2(0.5408756, 0.5199381)
 sprite_frames = SubResource("SpriteFrames_fso1c")
 animation = &"Stand_Left"
