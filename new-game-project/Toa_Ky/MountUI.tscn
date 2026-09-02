@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://dsl1lrfyamv0u"]
+
+[ext_resource type="Script" uid="uid://cma47w2a4jo5" path="res://Toa_Ky/MountUI.cs" id="1_883ni"]
+[ext_resource type="PackedScene" uid="uid://dl5qchirb4s24" path="res://Toa_Ky/MountSlot.tscn" id="2_2ti12"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_cqg3n"]
+[ext_resource type="Resource" uid="uid://bak5dfpo6d3wq" path="res://Toa_Ky/Toa_Ky_Mat_Dat/Cuc_Pham_Vip_Pro/TuLong/tulong.tres" id="3_2ti12"]
+[ext_resource type="Texture2D" uid="uid://j2rubuyfilhm" path="res://Inventory/Asset/InvBG.png" id="4_kta2f"]
+[ext_resource type="Texture2D" uid="uid://bfbxfo07fukg8" path="res://Inventory/Asset/PopUp.png" id="5_hloxa"]
+[ext_resource type="FontFile" uid="uid://bhw6a3hajlbpj" path="res://Asset/Font/Noto_Serif_SC/NotoSerifSC-VariableFont_wght.ttf" id="7_ctl3g"]
+
+[node name="MountUI" type="Control" unique_id=1261795872 node_paths=PackedStringArray("gridContainer", "popupPanel", "popupIcon", "popupName", "popupCategory", "popupDesc", "summonButton", "closePopupButton")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_883ni")
+slotScene = ExtResource("2_2ti12")
+gridContainer = NodePath("Panel/GridContainer")
+allMountsDatabase = Array[Object]([ExtResource("3_2ti12")])
+popupPanel = NodePath("PopupPanel")
+popupIcon = NodePath("PopupPanel/PopupIcon")
+popupName = NodePath("PopupPanel/PopupName")
+popupCategory = NodePath("PopupPanel/PopupCategory")
+popupDesc = NodePath("PopupPanel/PopupDesc")
+summonButton = NodePath("PopupPanel/SummonButton")
+closePopupButton = NodePath("PopupPanel/ClosePopupButton")
+
+[node name="Panel" type="TextureRect" parent="." unique_id=342889183]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 276.0
+offset_right = 428.0
+offset_bottom = 785.0
+texture = ExtResource("4_kta2f")
+expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=673988242]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 56.0
+offset_right = 403.0
+offset_bottom = 442.0
+columns = 3
+
+[node name="PopupPanel" type="TextureRect" parent="." unique_id=1963090870]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 273.0
+offset_right = 692.0
+offset_bottom = 566.0
+texture = ExtResource("5_hloxa")
+expand_mode = 1
+
+[node name="PopupIcon" type="TextureRect" parent="PopupPanel" unique_id=269709326]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 67.0
+offset_right = 100.0
+offset_bottom = 133.0
+texture = ExtResource("2_cqg3n")
+expand_mode = 1
+
+[node name="PopupName" type="Label" parent="PopupPanel" unique_id=530440299]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 67.0
+offset_right = 221.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("7_ctl3g")
+text = "Ngựa xích thố"
+
+[node name="PopupCategory" type="RichTextLabel" parent="PopupPanel" unique_id=476450129]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 95.0
+offset_right = 269.0
+offset_bottom = 124.0
+theme_override_fonts/normal_font = ExtResource("7_ctl3g")
+bbcode_enabled = true
+text = "Loại: cực phẩm"
+scroll_active = false
+
+[node name="PopupDesc" type="RichTextLabel" parent="PopupPanel" unique_id=1335705948]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 138.0
+offset_right = 238.0
+offset_bottom = 218.0
+theme_override_fonts/normal_font = ExtResource("7_ctl3g")
+bbcode_enabled = true
+text = "ngựa chiến của lữ father"
+scroll_active = false
+
+[node name="SummonButton" type="Button" parent="PopupPanel" unique_id=224711528]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 242.0
+offset_right = 132.0
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("7_ctl3g")
+text = "Trang bị"
+
+[node name="ClosePopupButton" type="Button" parent="PopupPanel" unique_id=313308815]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 242.0
+offset_right = 220.0
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("7_ctl3g")
+text = "Đóng"
+
+[node name="Label" type="Label" parent="PopupPanel" unique_id=1321314737]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Label3" type="Label" parent="PopupPanel" unique_id=2041108141]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 138.0
+offset_right = 89.0
+offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("7_ctl3g")
+text = "Mô tả:"

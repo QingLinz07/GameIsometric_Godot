@@ -236,7 +236,9 @@ func _on_create_character_pressed():
 		"stamina": 100,
 		"max_stamina": 100,
 		"exp": 0,
-		"max_exp": 100
+		"max_exp": 100,
+		"owned_mounts": [""],
+		"equipped_mount": ""
 	}
 	
 	if save_character_data(file_path, new_data):

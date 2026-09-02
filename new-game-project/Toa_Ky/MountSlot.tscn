@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dl5qchirb4s24"]
+
+[ext_resource type="Script" uid="uid://cfnhgyd5mvj6m" path="res://Toa_Ky/MountSlot.cs" id="1_utaco"]
+[ext_resource type="Texture2D" uid="uid://djombu8yvp4da" path="res://Toa_Ky/bgmountitem.png" id="2_nuxwx"]
+[ext_resource type="Texture2D" uid="uid://b5h77vw8mpxd3" path="res://Toa_Ky/Toa_Ky_Mat_Dat/Cuc_Pham_Vip_Pro/TuLong/iconn.png" id="2_utaco"]
+[ext_resource type="Texture2D" uid="uid://bn76frre3dye1" path="res://Toa_Ky/o_khoa.png" id="4_d8fyn"]
+[ext_resource type="FontFile" uid="uid://bhw6a3hajlbpj" path="res://Asset/Font/Noto_Serif_SC/NotoSerifSC-VariableFont_wght.ttf" id="4_vdv4i"]
+
+[node name="MountSlot" type="Button" unique_id=1138495928 node_paths=PackedStringArray("iconRect", "nameLabel", "bgRect", "lockIcon")]
+offset_right = 93.0
+offset_bottom = 108.0
+script = ExtResource("1_utaco")
+iconRect = NodePath("IconRect")
+nameLabel = NodePath("Label")
+bgRect = NodePath("TextureRect")
+lockIcon = NodePath("lockIcon")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=354632454]
+layout_mode = 0
+offset_right = 93.0
+offset_bottom = 109.0
+texture = ExtResource("2_nuxwx")
+expand_mode = 1
+
+[node name="IconRect" type="TextureRect" parent="." unique_id=145005003]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 85.0
+offset_bottom = 68.0
+texture = ExtResource("2_utaco")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=1260269660]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 90.0
+offset_right = 92.0
+offset_bottom = 103.0
+theme_override_fonts/font = ExtResource("4_vdv4i")
+theme_override_font_sizes/font_size = 8
+text = "Giao Long Chấn Hải"
+horizontal_alignment = 1
+
+[node name="lockIcon" type="TextureRect" parent="." unique_id=294154020]
+layout_mode = 0
+offset_left = 75.0
+offset_right = 90.0
+offset_bottom = 18.0
+texture = ExtResource("4_d8fyn")
+expand_mode = 1

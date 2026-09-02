@@ -28,6 +28,7 @@ AutoSaveManager="*uid://beogdrfqghwck"
 PlayerManager="*uid://dpirqqk8ht858"
 ItemDatabase="*uid://cx0myd3yyqbvq"
 SendPlayerMessage="*uid://b512a51jld8va"
+MountDatabaseManager="*uid://we4fnchq72l7"
 
 [display]
 

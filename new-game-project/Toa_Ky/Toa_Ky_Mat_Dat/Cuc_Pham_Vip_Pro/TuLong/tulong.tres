@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MountData" format=3 uid="uid://bak5dfpo6d3wq"]
+
+[ext_resource type="Texture2D" uid="uid://b5h77vw8mpxd3" path="res://Toa_Ky/Toa_Ky_Mat_Dat/Cuc_Pham_Vip_Pro/TuLong/iconn.png" id="1_kv4sl"]
+[ext_resource type="Script" uid="uid://b3n3cs6ldn8mf" path="res://Toa_Ky/MountData.cs" id="1_pvyu7"]
+[ext_resource type="PackedScene" uid="uid://crvdphqv4a8te" path="res://Toa_Ky/Toa_Ky_Mat_Dat/Cuc_Pham_Vip_Pro/tulong.tscn" id="2_anbxf"]
+
+[resource]
+script = ExtResource("1_pvyu7")
+MountId = "tu_long"
+MountName = "Tu Long"
+SpeedMultiplier = 0.01
+Category = "Loại : [color=#FF2222]Cực Phẩm[/color]"
+Description = "Linh thú của tiên giới"
+Icon = ExtResource("1_kv4sl")
+MountScene = ExtResource("2_anbxf")
+metadata/_custom_type_script = "uid://b3n3cs6ldn8mf"

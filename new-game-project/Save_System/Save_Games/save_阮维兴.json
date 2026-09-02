@@ -1,11 +1,12 @@
 {
 	"character_name": "阮维兴",
+	"equipped_mount": "tu_long",
 	"exp": 50.0,
-	"hp": 1000.0,
+	"hp": 990.0,
 	"inventory_data": {
 		"0": {
 			"item_id": "2",
-			"quantity": 47
+			"quantity": 50
 		},
 		"1": {
 			"item_id": "2",
@@ -25,7 +26,10 @@
 	"max_exp": 100.0,
 	"max_hp": 1000.0,
 	"max_stamina": 1000.0,
-	"pos_x": 668.392639160156,
-	"pos_y": -1088.10717773438,
-	"stamina": 510.0
+	"owned_mounts": [
+		"tu_long"
+	],
+	"pos_x": 991.684020996094,
+	"pos_y": -956.777160644531,
+	"stamina": 490.0
 }

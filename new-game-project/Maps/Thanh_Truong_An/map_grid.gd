@@ -42,7 +42,7 @@ func spawn_all_tiles(pos: Vector2, sca: Vector2) -> void:
 			tile.centered = false
 			
 			# Đúng định dạng hàng_cột của bạn
-			var file_path = "res://Asset/Map/ThanhTruongAn/tile_%d_%d.png" % [row, col]
+			var file_path = "res://Maps/Thanh_Truong_An/Asset/tile_%d_%d.png" % [row, col]
 			
 			if ResourceLoader.exists(file_path):
 				tile.texture = null # Ban đầu để trống cho nhẹ RAM

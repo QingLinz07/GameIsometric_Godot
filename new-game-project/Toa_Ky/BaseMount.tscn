@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dwlgp0va4enu5"]
+
+[ext_resource type="Script" uid="uid://cwky0r2la7pgo" path="res://Toa_Ky/BaseMount.cs" id="1_6058f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncqna"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Stand_Down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Stand_Down_Left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Stand_Down_Right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Stand_Left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Stand_Right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Stand_Up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Stand_Up_Left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Stand_Up_Right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Walk_Down",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Walk_Down_Left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Walk_Down_Right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Walk_Left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Walk_Right",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Walk_Up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Walk_Up_Left",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"Walk_Up_Right",
+"speed": 5.0
+}]
+
+[node name="MountEntity" type="Node2D" unique_id=324751895]
+script = ExtResource("1_6058f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=658680441]
+sprite_frames = SubResource("SpriteFrames_ncqna")
+animation = &"Stand_Down_Right"
+
+[node name="SeatAnchor" type="Marker2D" parent="." unique_id=831818760]
