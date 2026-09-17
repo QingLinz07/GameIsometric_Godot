@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cmxj86lg1exio" path="res://UI/Stats_UI/stats_ui.gd" id="1_8nvg4"]
 [ext_resource type="Texture2D" uid="uid://crt81hqtkap6b" path="res://UI/Stats_UI/UI.png" id="2_27uj6"]
-[ext_resource type="FontFile" uid="uid://e4yeqby5c2sg" path="res://Asset/Font/Noto_Serif_SC/static/NotoSerifSC-Regular.ttf" id="3_27uj6"]
-[ext_resource type="FontFile" uid="uid://bhw6a3hajlbpj" path="res://Asset/Font/Noto_Serif_SC/NotoSerifSC-VariableFont_wght.ttf" id="3_papbe"]
-[ext_resource type="FontFile" uid="uid://knj1obu62aao" path="res://Asset/Font/Noto_Serif_SC/static/NotoSerifSC-Bold.ttf" id="4_27uj6"]
+[ext_resource type="FontFile" uid="uid://dcwarmyoyqkfw" path="res://Assets/Font/NotoSerifSC-VariableFont_wght.ttf" id="3_27uj6"]
+[ext_resource type="FontFile" uid="uid://dcwarmyoyqkfw" path="res://Assets/Font/NotoSerifSC-VariableFont_wght.ttf" id="3_papbe"]
+[ext_resource type="FontFile" uid="uid://dcwarmyoyqkfw" path="res://Assets/Font/NotoSerifSC-VariableFont_wght.ttf" id="4_27uj6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ontfu"]
 bg_color = Color(0.23921569, 0.23921569, 0.23921569, 1)

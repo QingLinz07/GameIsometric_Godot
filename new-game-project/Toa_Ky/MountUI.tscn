@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://bak5dfpo6d3wq" path="res://Toa_Ky/Toa_Ky_Mat_Dat/Cuc_Pham_Vip_Pro/TuLong/tulong.tres" id="3_2ti12"]
 [ext_resource type="Texture2D" uid="uid://j2rubuyfilhm" path="res://Inventory/Asset/InvBG.png" id="4_kta2f"]
 [ext_resource type="Texture2D" uid="uid://bfbxfo07fukg8" path="res://Inventory/Asset/PopUp.png" id="5_hloxa"]
-[ext_resource type="FontFile" uid="uid://bhw6a3hajlbpj" path="res://Asset/Font/Noto_Serif_SC/NotoSerifSC-VariableFont_wght.ttf" id="7_ctl3g"]
+[ext_resource type="FontFile" uid="uid://dcwarmyoyqkfw" path="res://Assets/Font/NotoSerifSC-VariableFont_wght.ttf" id="7_ctl3g"]
 
 [node name="MountUI" type="Control" unique_id=1261795872 node_paths=PackedStringArray("gridContainer", "popupPanel", "popupIcon", "popupName", "popupCategory", "popupDesc", "summonButton", "closePopupButton")]
 layout_mode = 3

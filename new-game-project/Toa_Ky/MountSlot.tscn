@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://djombu8yvp4da" path="res://Toa_Ky/bgmountitem.png" id="2_nuxwx"]
 [ext_resource type="Texture2D" uid="uid://b5h77vw8mpxd3" path="res://Toa_Ky/Toa_Ky_Mat_Dat/Cuc_Pham_Vip_Pro/TuLong/iconn.png" id="2_utaco"]
 [ext_resource type="Texture2D" uid="uid://bn76frre3dye1" path="res://Toa_Ky/o_khoa.png" id="4_d8fyn"]
-[ext_resource type="FontFile" uid="uid://bhw6a3hajlbpj" path="res://Asset/Font/Noto_Serif_SC/NotoSerifSC-VariableFont_wght.ttf" id="4_vdv4i"]
+[ext_resource type="FontFile" uid="uid://dcwarmyoyqkfw" path="res://Assets/Font/NotoSerifSC-VariableFont_wght.ttf" id="4_vdv4i"]
 
 [node name="MountSlot" type="Button" unique_id=1138495928 node_paths=PackedStringArray("iconRect", "nameLabel", "bgRect", "lockIcon")]
 offset_right = 93.0

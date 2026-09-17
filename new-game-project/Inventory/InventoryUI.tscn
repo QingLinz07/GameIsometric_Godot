@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://j2rubuyfilhm" path="res://Inventory/Asset/InvBG.png" id="2_s55ce"]
 [ext_resource type="Script" uid="uid://bnowa8mtc7mu1" path="res://Inventory/SlotUI.cs" id="2_v30as"]
 [ext_resource type="Script" uid="uid://bfi4s40wuayfa" path="res://Autoload/SoundManager/SoundManager.cs" id="3_ephh0"]
-[ext_resource type="FontFile" uid="uid://bhw6a3hajlbpj" path="res://Asset/Font/Noto_Serif_SC/NotoSerifSC-VariableFont_wght.ttf" id="3_t36q6"]
+[ext_resource type="FontFile" uid="uid://dcwarmyoyqkfw" path="res://Assets/Font/NotoSerifSC-VariableFont_wght.ttf" id="3_t36q6"]
 [ext_resource type="Texture2D" uid="uid://bfbxfo07fukg8" path="res://Inventory/Asset/PopUp.png" id="5_ephh0"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="6_hohgl"]
-[ext_resource type="AudioStream" uid="uid://byfriudfe0tmw" path="res://Asset/Musics/UI/UIClickSound.mp3" id="8_hohgl"]
+[ext_resource type="AudioStream" path="res://Asset/Musics/UI/UIClickSound.mp3" id="8_hohgl"]
 
 [node name="InventoryUi" type="Control" unique_id=933625147 node_paths=PackedStringArray("gridContainer", "pageButtons", "autoSortButton", "itemInfoPanel", "infoIcon", "infoNameLabel", "infoPhanLoaiLabel", "infoDescLabel", "useButton", "dropButton", "splitButton", "closeInfoButton", "dropPopup", "popupTitleLabel", "dropQuantityInput", "confirmDropButton", "closePopupButton") groups=["InventoryUI"]]
 layout_mode = 3
