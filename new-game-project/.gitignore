@@ -1,7 +1,5 @@
 # Godot specific ignores
 .godot/
-/Asset/
-/Assets/
 
 # C# / Mono / VS Code / Visual Studio ignores
 .mono/
